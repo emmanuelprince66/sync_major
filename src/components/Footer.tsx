@@ -1,52 +1,78 @@
-export const Footer = ({ storeData }: { storeData: any }) => {
-  // console.log("Store data:", storeData);
-  const storeName = storeData?.results?.info?.name || "OutStore Premium";
-  const location = storeData?.results?.info?.state;
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { MdSecurity } from "react-icons/md";
+import logoOne from "../assets/logoOne.png";
 
+const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Store Info */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-3">
-              {storeName}
-            </h3>
-            {location && <p className="text-sm mb-2">{location}</p>}
+    <footer className="bg-gradient-to-b from-[#d5dcd6] to-[#e8ede9] py-8 px-4">
+      <div className="max-w-[90%] mx-auto">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center mb-6 pb-6 border-b border-gray-400">
+          {/* Logo */}
+          <div className="mb-4 md:mb-0">
+            <img src={logoOne} alt="Sync360" className="h-8 md:h-10 w-auto" />
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-3">
-              Contact Us
-            </h3>
-            <a
-              href="tel:09035271187"
-              className="text-sm hover:text-white transition-colors"
-            >
-              09035271187
-            </a>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-3">
-              Information
-            </h3>
-            <p className="text-sm">Quality products, exceptional service.</p>
+          {/* Social Media */}
+          <div className="flex items-center gap-4">
+            <span className="text-sm text-gray-700 hidden sm:inline">
+              Follow Us On Social Media
+            </span>
+            <div className="flex gap-3">
+              <button
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={20} className="text-gray-700" />
+              </button>
+              <button
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={20} className="text-gray-700" />
+              </button>
+              <button
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm"
+                aria-label="X (Twitter)"
+              >
+                <FaXTwitter size={18} className="text-gray-700" />
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <p>
-            © {new Date().getFullYear()} {storeName}. All rights reserved.
-          </p>
-          <p className="text-gray-400">
-            Powered by <span className="text-white font-medium">Sync360</span>
-          </p>
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+          {/* Copyright */}
+          <div className="text-center md:text-left">
+            <p>©2025 Sync360. All Rights Reserved.</p>
+          </div>
+
+          {/* Version */}
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-gray-400 rounded flex items-center justify-center">
+              <MdSecurity size={18} className="text-white" />
+            </div>
+            <span className="font-medium">Version 1.0</span>
+          </div>
+
+          {/* Links */}
+          <div className="flex flex-wrap justify-center gap-4 text-center">
+            <a href="#" className="hover:text-green-600 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-green-600 transition-colors">
+              Terms & Conditions
+            </a>
+            <a href="#" className="hover:text-green-600 transition-colors">
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
+
+export default Footer;

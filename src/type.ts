@@ -11,6 +11,7 @@ export interface StoreInfo {
   tag_line: string | null;
   type: string;
   id: string;
+  banner: string | null;
 }
 
 export interface Category {

@@ -1,34 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import { ToastContainer } from "react-toastify";
-import Success from "./components/Success";
-import { CartProvider } from "./context/CartContext";
-import InStore from "./pages/InStore";
-import { OutStore } from "./pages/OutStore";
+import { AccordionContent } from "./components/AccordionContent";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ReachUs from "./components/ReachUs";
 
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/in-store" element={<InStore />} />
-          <Route path="/out-store" element={<OutStore />} />
-          <Route
-            path="/out-store/success"
-            element={<Success path={"/out-store"} />}
-          />
-          <Route
-            path="/in-store/success"
-            element={<Success path={"/in-store"} />}
-          />
-          <Route
-            path="*"
-            element={<div className="text-center mt-10">Not Found</div>}
-          />
-        </Routes>
-        <ToastContainer />
-      </BrowserRouter>
-    </CartProvider>
+    <div className="w-full">
+      <Header />
+      <Content />
+      <AccordionContent />
+      <ReachUs />
+      <Footer />
+    </div>
   );
 }
 
