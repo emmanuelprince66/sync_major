@@ -33,7 +33,7 @@ const ReachUs = () => {
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 items-center lg:items-start">
               {/* Google Play Button */}
               <a
-                href="https://play.google.com/store/apps/details?id=app.Sync360.us"
+                href="https://play.google.com/store/apps/details?id=com.sync.sink"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center bg-[#010101] gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
