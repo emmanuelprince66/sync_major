@@ -52,7 +52,7 @@ const Marquee = () => {
   ];
   return (
     <div className="w-full overflow-hidden bg-[#B9C6BB] py-8">
-      <div className="flex gap-4 animate-scroll whitespace-nowrap">
+      <div className="flex gap-10 animate-scroll whitespace-nowrap">
         {[...items, ...items, ...items].map((item, index) => (
           <div
             key={index}
@@ -74,39 +74,27 @@ const Content = () => {
     >
       <div className="w-full md:w-[70%] mx-auto ">
         <svg
-          className="absolute top-28 left-6 md:top-40 md:left-12 w-4 h-4 md:w-6 md:h-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#131914"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          className="absolute top-10 left-6 md:top-40 md:left-12 w-8 h-8 md:w-15 md:h-15"
+          viewBox="0 0 51 51"
+          fill="#131914"
         >
-          <path d="M12 2v20M2 12h20" />
+          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
         </svg>
 
         <svg
-          className="absolute top-1/2 right-8 md:top-1/2 md:right-16 w-4 h-4 md:w-6 md:h-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#131914"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          className="absolute top-1/2 right-8 md:top-1/2 md:right-16 w-8 h-8 md:w-12 md:h-12"
+          viewBox="0 0 51 51"
+          fill="#131914"
         >
-          <path d="M12 2v20M2 12h20" />
+          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
         </svg>
 
         <svg
-          className="absolute bottom-64 left-1/2 md:bottom-72 md:left-1/3 w-4 h-4 md:w-6 md:h-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#131914"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          className="absolute bottom-64 left-1/2 md:bottom-72 md:left-1/3 w-10 h-10 md:w-12 md:h-12"
+          viewBox="0 0 51 51"
+          fill="#131914"
         >
-          <path d="M12 2v20M2 12h20" />
+          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
         </svg>
 
         {/* Header */}

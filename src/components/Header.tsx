@@ -1,8 +1,14 @@
+import baseOne from "../assets/base1.png";
+import baseTwo from "../assets/base2.png";
+import baseThree from "../assets/base3.png";
+import baseFour from "../assets/base4.png";
 import chattriz from "../assets/chatrizz2.png";
 import headerSvg from "../assets/header_svg.png";
 import logoOne from "../assets/logoOne.png";
 import needs from "../assets/needs.png";
+import standforth from "../assets/standforth.png";
 import syncDarkLogo from "../assets/sync360Dark.png";
+import vfd from "../assets/vfd.jpeg";
 import wLogo from "../assets/wLogo.png";
 
 const Header = () => {
@@ -19,7 +25,7 @@ const Header = () => {
 
       {/* Navigation Bar with backdrop blur */}
       <nav
-        className="px-6 md:px-12 py-4 md:py-6 flex items-center justify-between relative z-20"
+        className="px-6 md:px-12 py-4 md:py-4 flex items-center justify-center md:justify-between relative z-20"
         style={{
           backgroundColor: "rgba(220, 227, 221, 0.4)",
           backdropFilter: "blur(12px)",
@@ -28,9 +34,9 @@ const Header = () => {
         }}
       >
         <div className="flex items-center">
-          <img src={logoOne} alt="Sync360" className="h-8 md:h-10 w-auto" />
+          <img src={logoOne} alt="Sync360" className="h-20 md:h-15 w-auto" />
         </div>
-        <div className="flex items-center gap-3 md:gap-4">
+        <div className="hidden md:flex items-center gap-3 md:gap-4">
           <button
             className="px-4 md:px-6 py-2 md:py-2.5 cursor-pointer rounded-full font-semibold transition-all text-sm md:text-base hover:scale-105 hover:shadow-lg"
             style={{ backgroundColor: "#52B661", color: "#DCE3DD" }}
@@ -48,57 +54,31 @@ const Header = () => {
 
       {/* Main Content */}
       <div className="flex-1 relative px-6 md:px-12 py-16 md:py-24 flex flex-col items-center justify-center z-10">
-        {/* Decorative Elements - Optimized positioning */}
-        {/* Top left cross */}
+        {/* Decorative Elements - Arc shapes */}
         <svg
-          className="absolute top-19 left-8 md:top-20 md:left-16 w-6 h-6 md:w-8 md:h-8"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#131914"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          className=" md:-top-3 hidden md:block absolute left-1/2 transform -translate-x-1/2 md:-right-16 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          viewBox="0 0 51 51"
+          fill="#131914"
+          opacity="0.6"
         >
-          <path d="M12 2v20M2 12h20" />
+          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
+        </svg>
+        {/* Bottom left arc */}
+        <svg
+          className="absolute bottom-1/7 left-6 md:bottom-1/4 md:left-24 w-5 h-5 md:w-7 md:h-7"
+          viewBox="0 0 51 51"
+          fill="#131914"
+        >
+          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
         </svg>
 
-        {/* Top right cross */}
+        {/* Bottom right arc */}
         <svg
-          className="absolute top-16 right-10 md:top-28 md:right-20 w-5 h-5 md:w-7 md:h-7"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#131914"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          className="absolute bottom-5 right-8 md:bottom-40 md:right-32 w-6 h-6 md:w-8 md:h-8"
+          viewBox="0 0 51 51"
+          fill="#131914"
         >
-          <path d="M12 2v20M2 12h20" />
-        </svg>
-
-        {/* Bottom left cross */}
-        <svg
-          className="absolute  bottom-1/3 left-6 md:bottom-1/4 md:left-24 w-4 h-4 md:w-6 md:h-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#131914"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 2v20M2 12h20" />
-        </svg>
-
-        {/* Bottom right cross */}
-        <svg
-          className="absolute bottom-32 right-8 md:bottom-40 md:right-32 w-5 h-5 md:w-7 md:h-7"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#131914"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 2v20M2 12h20" />
+          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
         </svg>
 
         {/* Center right dot */}
@@ -112,11 +92,10 @@ const Header = () => {
 
         {/* Center left arc */}
         <svg
-          className="absolute top-1/2 left-12 md:top-1/2 md:left-20 w-4 h-4 md:w-6 md:h-6"
+          className="absolute top-1/9 left-12 md:top-1/2 md:left-20 w-4 h-4 md:w-6 md:h-6"
           viewBox="0 0 51 51"
           fill="#131914"
         >
-          <path d="M25.5 0C25.5 8 21 12.5 12.75 12.75C21 12.75 25.5 17.25 25.5 25.5C25.5 17.25 30 12.75 38.25 12.75C30 12.75 25.5 8 25.5 0Z" />
           <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
         </svg>
 
@@ -138,18 +117,15 @@ const Header = () => {
                 className="relative inline-block"
               >
                 business
-                {/* SVG Plus instead of text */}
+                {/* First SVG Arc - Bigger */}
                 <svg
-                  className="hidden md:block md:absolute md:-top-3 md:-right-4 md:w-10 md:h-10 lg:w-12 lg:h-12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#131914"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  className="hidden md:block md:absolute md:-top-6 md:-right-8 md:w-14 md:h-14 lg:w-16 lg:h-16"
+                  viewBox="0 0 51 51"
+                  fill="#131914"
                 >
-                  <path d="M12 5v14M5 12h14" />
+                  <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
                 </svg>
+                {/* Second SVG Arc - Even Bigger, Further Away */}
               </span>{" "}
               from one system
             </p>
@@ -161,7 +137,7 @@ const Header = () => {
             style={{
               color: "#131914",
               letterSpacing: "-0.018em",
-              lineHeight: "1",
+              lineHeight: "30px",
             }}
           >
             Sync360 is the business operating system that connects how SMEs
@@ -185,6 +161,16 @@ const Header = () => {
             >
               Request a Demo
             </button>
+            <button
+              className="md:hidden px-8 py-3.5 cursor-pointer rounded-full font-semibold border-2 transition-all text-base hover:scale-105"
+              style={{
+                backgroundColor: "transparent",
+                color: "#52B661",
+                border: "none",
+              }}
+            >
+              Sign In
+            </button>
           </div>
         </div>
       </div>
@@ -193,17 +179,15 @@ const Header = () => {
       <div className="w-full flex justify-center mx-auto p-4 md:p-0 ">
         <div className="mx-4 md:mx-12 mb-12 md:mb-16 bg-[#2F5034] rounded-2xl w-full md:w-[70%] mx-auto md:rounded-3xl p-6 md:p-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 relative z-10">
           {[
-            { icon: "▪▪", label: "Orders Processed", value: "10,000+" },
-            { icon: "■", label: "Active Businesses", value: "1,500+" },
-            { icon: "▪▪▪", label: "Sales Tracked", value: "₦500M+" },
-            { icon: "□", label: "Reliable", value: "99.9%" },
+            { icon: baseOne, label: "Orders Processed", value: "1.2B+" },
+            { icon: baseTwo, label: "Active Businesses", value: "100+" },
+            { icon: baseThree, label: "Sales Tracked", value: "₦42,000+" },
+            { icon: baseFour, label: "Reliable", value: "99.9%" },
           ].map((stat, idx) => (
             <div key={idx} className="flex items-center gap-3 md:gap-4">
-              <span
-                className="text-2xl md:text-3xl"
-                style={{ color: "#7FB88D" }}
-              >
-                {stat.icon}
+              <span className="text-2xl md:text-3xl">
+                <img src={stat.icon} alt="" />
+                {/* {stat.icon} */}
               </span>
               <div>
                 <p
@@ -228,6 +212,8 @@ const Header = () => {
       >
         <div className="flex flex-wrap items-center w-full justify-center gap-8 md:gap-35">
           <img src={wLogo} alt="Wise" className="h-6 md:h-8 w-auto " />
+          <img src={standforth} alt="Wise" className="h-10 md:h-15 w-auto " />
+          <img src={vfd} alt="Wise" className="h-6 md:h-8 w-auto " />
           <img
             src={syncDarkLogo}
             alt="Sync360"

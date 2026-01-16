@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 pb-6 border-b border-gray-400">
           {/* Logo */}
           <div className="mb-4 md:mb-0">
-            <img src={logoOne} alt="Sync360" className="h-8 md:h-10 w-auto" />
+            <img src={logoOne} alt="Sync360" className="h-15 md:h-20 w-auto" />
           </div>
 
           {/* Social Media */}
@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
           {/* Copyright */}
           <div className="text-center md:text-left">
-            <p>©2025 Sync360. All Rights Reserved.</p>
+            <p>©{new Date().getFullYear()} Sync360. All Rights Reserved.</p>
           </div>
 
           {/* Version */}
