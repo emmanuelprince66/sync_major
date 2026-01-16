@@ -8,44 +8,66 @@ interface ContentItem {
   heading: string;
   description: string;
   image: string;
+  buttonText?: string;
+  buttonLink?: string;
+  buttonDisabled?: boolean;
+  buttonVariant?: "primary" | "demo" | "disabled";
 }
 
 const contentItems: ContentItem[] = [
   {
     heading: "Inventory doesn't have to be stressful",
     description:
-      "If you’re here, inventory is likely a problem  missing items, unclear stock levels, or no system at all. Sync360 helps you manage stock without spreadsheets or expensive ERP tools. Easily see what’s in store, what’s out of stock, who sold what, and keep full control of your business.",
+      "If you’re here, inventory is likely a problem — missing items, unclear stock levels, or no system at all. Sync360 helps you manage stock without spreadsheets or expensive ERP tools. Easily see what’s in store, what’s out of stock, who sold what, and keep full control of your business.",
     image: contentOne,
+    buttonText: "Get Started",
+    buttonLink: "https://business.sync360.africa/signup",
+    buttonVariant: "primary",
   },
   {
     heading: "Sell beyond your physical store",
     description:
       "Sell anywhere with a website connected to inventory and checkout payments. Sync360 automatically records sales, updates stock, and helps you manage your business beyond your physical location.",
     image: contentTwo,
+    buttonText: "Get Started",
+    buttonLink: "https://business.sync360.africa/signup",
+    buttonVariant: "primary",
   },
   {
     heading: "A dedicated business account for your payments",
     description:
       "Stop mixing personal and business funds. Sync360 helps you accept payments, track transactions automatically, and keep your business finances structured.",
     image: contentThree,
+    buttonText: "Get Started",
+    buttonLink: "https://business.sync360.africa/signup",
+    buttonVariant: "primary",
   },
   {
     heading: "You started a business not to become an accountant",
     description:
       "SYNC360 Accounting turns your transactions into clear, structured reports. From revenue tracking to tax-ready summaries, stay compliant, understand your numbers, and make data-driven decisions without the complexity of traditional accounting.",
     image: contentFour,
+    buttonText: "Coming Soon",
+    buttonDisabled: true,
+    buttonVariant: "disabled",
   },
   {
     heading: "End Shelf Price Errors Forever",
     description:
-      "SYNC360 replaces outdated paper tags with real-time digital pricing. Customers scan a QR code to see the exact price directly from your inventory system  no different prices at checkout, no chaos. Just accuracy, trust, and reliability in every aisle.",
+      "SYNC360 replaces outdated paper tags with real-time digital pricing. Customers scan a QR code to see the exact price directly from your inventory system — no different prices at checkout, no chaos. Just accuracy, trust, and reliability in every aisle.",
     image: contentSix,
+    buttonText: "Request a Demo",
+    buttonLink: "https://wa.me/message/BEC7OOFPUWZZK1",
+    buttonVariant: "demo",
   },
   {
     heading: "Built to Run Your Business End-to-End",
     description:
       "With SYNC360, businesses can organize operations, generate invoices, download real-time reports, manage VAT and WHT compliance, and oversee accounting all from one centralized platform.",
     image: contentOne,
+    buttonText: "Get Started",
+    buttonLink: "https://business.sync360.africa/signup",
+    buttonVariant: "primary",
   },
 ];
 
@@ -76,9 +98,10 @@ const Content = () => {
   return (
     <div
       style={{ backgroundColor: "#DCE3DD" }}
-      className="w-full min-h-screen relative display flex-col flex items-center justify-center"
+      className="w-full min-h-screen relative flex flex-col items-center justify-center"
     >
-      <div className="w-full md:w-[70%] mx-auto ">
+      <div className="w-full md:w-[70%] mx-auto">
+        {/* Decorative SVGs */}
         <svg
           className="absolute top-10 left-6 md:top-40 md:left-12 w-8 h-8 md:w-15 md:h-15"
           viewBox="0 0 51 51"
@@ -144,12 +167,42 @@ const Content = () => {
                       <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
                         {item.description}
                       </p>
-                      <button
-                        style={{ backgroundColor: "#52B661" }}
-                        className="text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
-                      >
-                        Learn More
-                      </button>
+
+                      {/* Dynamic Button */}
+                      {item.buttonVariant === "primary" && (
+                        <a
+                          href={item.buttonLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block px-6 py-3 rounded-lg font-medium text-white bg-[#52B661] hover:opacity-90 transition-opacity"
+                          style={{
+                            backgroundColor: "#52B661",
+                            color: "#DCE3DD",
+                          }}
+                        >
+                          {item.buttonText}
+                        </a>
+                      )}
+
+                      {item.buttonVariant === "demo" && (
+                        <a
+                          href={item.buttonLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block px-6 py-3 rounded-lg font-medium border-2 border-[#131914] text-[#131914] hover:bg-[#131914] hover:text-white transition-all"
+                        >
+                          {item.buttonText}
+                        </a>
+                      )}
+
+                      {item.buttonVariant === "disabled" && (
+                        <button
+                          disabled
+                          className="px-6 py-3 rounded-lg font-medium bg-gray-300 text-gray-500 cursor-not-allowed"
+                        >
+                          {item.buttonText}
+                        </button>
+                      )}
                     </div>
 
                     {/* Image Content */}

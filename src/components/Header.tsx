@@ -151,20 +151,23 @@ const Header = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center mb-1 md:mb-28">
+            {/* Get Started */}
             <a
               href="https://business.sync360.africa/signup"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 md:px-10 cursor-pointer py-3.5 md:py-4 rounded-full font-semibold transition-all text-base md:text-lg hover:scale-105 hover:shadow-xl hover:bg-[#234028] text-center"
+              className="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold transition-all text-base md:text-lg hover:scale-105 hover:shadow-xl hover:bg-[#234028] text-center"
               style={{ backgroundColor: "#52B661", color: "#DCE3DD" }}
             >
               Get Started
             </a>
+
+            {/* Request a Demo */}
             <a
               href="https://wa.me/message/BEC7OOFPUWZZK1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold border-2 transition-all text-base md:text-lg hover:scale-105 hover:bg-[#131914] hover:text-white hover:border-[#131914] cursor-pointer"
+              className="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold border-2 transition-all text-base md:text-lg hover:scale-105 hover:bg-[#131914] hover:text-white hover:border-[#131914] text-center"
               style={{
                 backgroundColor: "transparent",
                 borderColor: "#131914",
@@ -173,15 +176,16 @@ const Header = () => {
             >
               Request a Demo
             </a>
+
+            {/* Sign In - Mobile Only */}
             <a
               href="https://business.sync360.africa"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:hidden px-8 py-3.5 cursor-pointer rounded-full font-semibold border-2 transition-all text-base hover:scale-105 text-center"
+              className="md:hidden w-full px-8 py-3.5 rounded-full font-semibold  transition-all text-base hover:scale-105 hover:bg-[#52B661]/10 text-center"
               style={{
-                backgroundColor: "transparent",
                 color: "#52B661",
-                border: "none",
+                borderColor: "#52B661",
               }}
             >
               Sign In
@@ -235,7 +239,6 @@ const Header = () => {
             alt="Sync360"
             className="h-6 md:h-8 w-auto "
           />
-          <img src={wLogo} alt="Wave" className="h-6 md:h-8 w-auto " />
           <img src={snip} alt="Chatrizz" className="h-6 md:h-8 w-auto " />
           <img src={ship} alt="Needz" className="h-6 md:h-8 w-auto " />
         </div>
