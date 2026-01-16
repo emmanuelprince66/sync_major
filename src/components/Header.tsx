@@ -98,7 +98,7 @@ const Header = () => {
 
         {/* Center left arc */}
         <svg
-          className="absolute top-1/9 left-12 md:top-1/2 md:left-20 w-4 h-4 md:w-6 md:h-6"
+          className="absolute top-1/11 left-12 md:top-1/2 md:left-20 w-4 h-4 md:w-6 md:h-6"
           viewBox="0 0 51 51"
           fill="#131914"
         >

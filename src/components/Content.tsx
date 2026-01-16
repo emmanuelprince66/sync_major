@@ -1,8 +1,8 @@
 import contentTwo from "../assets/content2.png";
 import contentThree from "../assets/content3.png";
 import contentFour from "../assets/content4.png";
-import contentSix from "../assets/content6.png";
 import contentOne from "../assets/contentOne.png";
+import ePricing from "../assets/e-pricing.jpeg";
 
 interface ContentItem {
   heading: string;
@@ -18,7 +18,7 @@ const contentItems: ContentItem[] = [
   {
     heading: "Inventory doesn't have to be stressful",
     description:
-      "If you’re here, inventory is likely a problem — missing items, unclear stock levels, or no system at all. Sync360 helps you manage stock without spreadsheets or expensive ERP tools. Easily see what’s in store, what’s out of stock, who sold what, and keep full control of your business.",
+      "If you’re here, inventory is likely a problem ,  missing items, unclear stock levels, or no system at all. Sync360 helps you manage stock without spreadsheets or expensive ERP tools. Easily see what’s in store, what’s out of stock, who sold what, and keep full control of your business.",
     image: contentOne,
     buttonText: "Get Started",
     buttonLink: "https://business.sync360.africa/signup",
@@ -52,10 +52,10 @@ const contentItems: ContentItem[] = [
     buttonVariant: "disabled",
   },
   {
-    heading: "End Shelf Price Errors Forever",
+    heading: "End Shelf Price Errors Forever In Your Supermarket",
     description:
-      "SYNC360 replaces outdated paper tags with real-time digital pricing. Customers scan a QR code to see the exact price directly from your inventory system — no different prices at checkout, no chaos. Just accuracy, trust, and reliability in every aisle.",
-    image: contentSix,
+      "SYNC360 replaces outdated paper tags with real-time digital pricing. Customers scan a QR code to see the exact price directly from your inventory system , no different prices at checkout, no chaos. Just accuracy, trust, and reliability in every aisle.",
+    image: ePricing,
     buttonText: "Request a Demo",
     buttonLink: "https://wa.me/message/BEC7OOFPUWZZK1",
     buttonVariant: "demo",
@@ -221,7 +221,11 @@ const Content = () => {
                         <img
                           src={item.image || "/placeholder.svg"}
                           alt={item.heading}
-                          className="w-full h-full object-contain p-4"
+                          className={`w-full h-full object-contain p-4 ${
+                            item?.buttonVariant === "demo"
+                              ? "rounded-[200px]"
+                              : ""
+                          }`}
                         />
                       </div>
                     </div>
