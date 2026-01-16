@@ -36,7 +36,8 @@ const ReachUs = () => {
                 href="https://play.google.com/store/apps/details?id=app.Sync360.us"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
+                className="flex items-center justify-center bg-[#010101] gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
+                style={{ backgroundColor: "#010101" }}
               >
                 <img
                   src={play || "/placeholder.svg"}
@@ -60,7 +61,8 @@ const ReachUs = () => {
                 href="https://apps.apple.com/us/app/Sync360/id6514304272"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
+                className="flex items-center justify-center bg-[#010101] gap-3  text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
+                style={{ backgroundColor: "#010101" }}
               >
                 <img
                   src={apple || "/placeholder.svg"}
