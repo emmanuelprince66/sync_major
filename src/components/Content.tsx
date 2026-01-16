@@ -77,14 +77,24 @@ const Marquee = () => {
     "💼 Sell everywhere",
     "📈 Grow faster",
     "⚡ Automate everything",
+    "💸 Expenses",
+    "👥 Customer Management",
+    "🛒 Store Front",
+    "📊 Sales Manager",
+    "📑 Accounting",
+    "📈 Reporting",
   ];
+
+  // Duplicate enough times to ensure seamless loop even on wide screens
+  const duplicatedItems = [...items, ...items, ...items, ...items];
+
   return (
     <div className="w-full overflow-hidden bg-[#B9C6BB] py-8">
-      <div className="flex gap-10 animate-scroll whitespace-nowrap">
-        {[...items, ...items, ...items].map((item, index) => (
+      <div className="inline-flex animate-marquee whitespace-nowrap">
+        {duplicatedItems.map((item, index) => (
           <div
             key={index}
-            className="inline-flex bg-[#2F5034] items-center justify-center px-6 py-5 rounded-full border-2 border-white text-white font-semibold text-sm flex-shrink-0 hover:bg-white hover:text-[#52B661] transition-all duration-300"
+            className="flex-shrink-0 mx-5 px-6 py-5 bg-[#2F5034] rounded-full border-2 border-white text-white font-semibold text-sm flex items-center justify-center hover:bg-white hover:text-[#52B661] transition-all duration-300"
           >
             {item}
           </div>

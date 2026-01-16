@@ -3,6 +3,7 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ReachUs from "./components/ReachUs";
+import TawkToChat from "./components/TawkToChat";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <AccordionContent />
       <ReachUs />
       <Footer />
+      <TawkToChat />
     </div>
   );
 }
