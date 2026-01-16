@@ -1,4 +1,4 @@
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdSecurity } from "react-icons/md";
 import logoOne from "../assets/logoOne.png";
@@ -20,24 +20,45 @@ const Footer = () => {
               Follow Us On Social Media
             </span>
             <div className="flex gap-3">
-              <button
+              <a
+                href="https://www.linkedin.com/company/sync360"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={20} className="text-gray-700" />
-              </button>
-              <button
+              </a>
+
+              <a
+                href="https://www.instagram.com/sync360_hq?igsh=MWR6ZnpsZ3NuOGh3Zw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm"
                 aria-label="Instagram"
               >
                 <FaInstagram size={20} className="text-gray-700" />
-              </button>
-              <button
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@getsync360"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm"
+                aria-label="TikTok"
+              >
+                <FaTiktok size={18} className="text-gray-700" />
+              </a>
+
+              <a
+                href="https://x.com/Sync360_hq"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm"
                 aria-label="X (Twitter)"
               >
                 <FaXTwitter size={18} className="text-gray-700" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

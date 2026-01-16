@@ -2,11 +2,11 @@ import baseOne from "../assets/base1.png";
 import baseTwo from "../assets/base2.png";
 import baseThree from "../assets/base3.png";
 import baseFour from "../assets/base4.png";
-import chattriz from "../assets/chatrizz2.png";
 import headerSvg from "../assets/header_svg.png";
-import logoOne from "../assets/logoOne.png";
-import needs from "../assets/needs.png";
+import ship from "../assets/ship.jpeg";
+import snip from "../assets/snip.jpeg";
 import standforth from "../assets/standforth.png";
+import syn from "../assets/sync.svg";
 import syncDarkLogo from "../assets/sync360Dark.png";
 import vfd from "../assets/vfd.jpeg";
 import wLogo from "../assets/wLogo.png";
@@ -33,27 +33,33 @@ const Header = () => {
           borderBottom: "1px solid rgba(47, 80, 52, 0.2)",
         }}
       >
-        <div className="flex items-center">
-          <img src={logoOne} alt="Sync360" className="h-20 md:h-15 w-auto" />
+        <div className="flex items-center z-100">
+          <img src={syn} alt="Sync360" className="h-20 md:h-15 w-auto z-100" />
         </div>
         <div className="hidden md:flex items-center gap-3 md:gap-4">
-          <button
-            className="px-4 md:px-6 py-2 md:py-2.5 cursor-pointer rounded-full font-semibold transition-all text-sm md:text-base hover:scale-105 hover:shadow-lg"
+          <a
+            href="https://business.sync360.africa/signup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 md:px-6 py-2 md:py-2.5 cursor-pointer rounded-full font-semibold transition-all text-sm md:text-base hover:scale-105 hover:shadow-lg text-center"
             style={{ backgroundColor: "#52B661", color: "#DCE3DD" }}
           >
             Get Started
-          </button>
-          <button
+          </a>
+          <a
+            href="https://business.sync360.africa"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-xs md:text-sm cursor-pointer font-semibold hover:opacity-70 transition-all"
             style={{ color: "#52B661" }}
           >
             Sign In
-          </button>
+          </a>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div className="flex-1 relative px-6 md:px-12 py-16 md:py-24 flex flex-col items-center justify-center z-10">
+      <div className="flex-1 relative px-6 md:px-12   md:py-24 flex flex-col items-center justify-center z-10">
         {/* Decorative Elements - Arc shapes */}
         <svg
           className=" md:-top-3 hidden md:block absolute left-1/2 transform -translate-x-1/2 md:-right-16 md:w-16 md:h-16 lg:w-20 lg:h-20"
@@ -65,7 +71,7 @@ const Header = () => {
         </svg>
         {/* Bottom left arc */}
         <svg
-          className="absolute bottom-1/7 left-6 md:bottom-1/4 md:left-24 w-5 h-5 md:w-7 md:h-7"
+          className="absolute bottom-[200px] left-6 md:bottom-1/4 md:left-24 w-5 h-5 md:w-7 md:h-7"
           viewBox="0 0 51 51"
           fill="#131914"
         >
@@ -102,7 +108,7 @@ const Header = () => {
         <div className="text-center max-w-4xl">
           {/* Sync360 Badge */}
           <p
-            className="text-xs md:text-sm font-bold mb-8 md:mb-12 tracking-wide philosopher-font"
+            className="text-xs md:text-sm font-bold mb-8 md:mb-12 mt-4 tracking-wide philosopher-font"
             style={{ color: "#52B661" }}
           >
             SYNC360
@@ -144,15 +150,21 @@ const Header = () => {
             sell, track money and stay compliant all in one platform
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center mb-20 md:mb-28">
-            <button
-              className="px-8 md:px-10 cursor-pointer py-3.5 md:py-4 rounded-full font-semibold transition-all text-base md:text-lg hover:scale-105 hover:shadow-xl hover:bg-[#234028]"
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center mb-1 md:mb-28">
+            <a
+              href="https://business.sync360.africa/signup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 md:px-10 cursor-pointer py-3.5 md:py-4 rounded-full font-semibold transition-all text-base md:text-lg hover:scale-105 hover:shadow-xl hover:bg-[#234028] text-center"
               style={{ backgroundColor: "#52B661", color: "#DCE3DD" }}
             >
               Get Started
-            </button>
-            <button
-              className="px-8 md:px-10 cursor-pointer py-3.5 md:py-4 rounded-full font-semibold border-2 transition-all text-base md:text-lg hover:scale-105 hover:bg-[#131914] hover:text-white hover:border-[#131914]"
+            </a>
+            <a
+              href="https://wa.me/message/BEC7OOFPUWZZK1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold border-2 transition-all text-base md:text-lg hover:scale-105 hover:bg-[#131914] hover:text-white hover:border-[#131914] cursor-pointer"
               style={{
                 backgroundColor: "transparent",
                 borderColor: "#131914",
@@ -160,9 +172,12 @@ const Header = () => {
               }}
             >
               Request a Demo
-            </button>
-            <button
-              className="md:hidden px-8 py-3.5 cursor-pointer rounded-full font-semibold border-2 transition-all text-base hover:scale-105"
+            </a>
+            <a
+              href="https://business.sync360.africa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden px-8 py-3.5 cursor-pointer rounded-full font-semibold border-2 transition-all text-base hover:scale-105 text-center"
               style={{
                 backgroundColor: "transparent",
                 color: "#52B661",
@@ -170,33 +185,35 @@ const Header = () => {
               }}
             >
               Sign In
-            </button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Stats Section */}
-      <div className="w-full flex justify-center mx-auto p-4 md:p-0 ">
-        <div className="mx-4 md:mx-12 mb-12 md:mb-16 bg-[#2F5034] rounded-2xl w-full md:w-[70%] mx-auto md:rounded-3xl p-6 md:p-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 relative z-10">
+      <div className="w-full flex justify-center mx-auto p-4 md:p-0">
+        <div className="mx-4 md:mx-12 mb-12 md:mb-16 bg-[#2F5034] rounded-2xl w-full md:w-[70%] mx-auto md:rounded-3xl p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 relative z-10">
           {[
-            { icon: baseOne, label: "Orders Processed", value: "1.2B+" },
+            { icon: baseOne, label: "Sales Powered", value: "1.2B+" },
             { icon: baseTwo, label: "Active Businesses", value: "100+" },
-            { icon: baseThree, label: "Sales Tracked", value: "₦42,000+" },
+            { icon: baseThree, label: "Total Sales", value: "₦42,000+" },
             { icon: baseFour, label: "Reliable", value: "99.9%" },
           ].map((stat, idx) => (
-            <div key={idx} className="flex items-center gap-3 md:gap-4">
-              <span className="text-2xl md:text-3xl">
+            <div
+              key={idx}
+              className="flex md:flex-row flex-col items-center justify-center md:justify-start gap-3 md:gap-4 text-center md:text-left"
+            >
+              <span className="text-2xl md:text-3xl hidden md:block">
                 <img src={stat.icon} alt="" />
-                {/* {stat.icon} */}
               </span>
               <div>
                 <p
-                  className="text-xl md:text-3xl font-bold philosopher-font"
+                  className="text-2xl md:text-3xl font-bold philosopher-font"
                   style={{ color: "#DCE3DD" }}
                 >
                   {stat.value}
                 </p>
-                <p className="text-xs md:text-sm" style={{ color: "#DCE3DD" }}>
+                <p className="text-sm md:text-sm" style={{ color: "#DCE3DD" }}>
                   {stat.label}
                 </p>
               </div>
@@ -204,7 +221,6 @@ const Header = () => {
           ))}
         </div>
       </div>
-
       {/* Trusted by Companies Worldwide */}
       <div
         className="px-6 md:px-6 py-5 md:py-3 relative z-10 w-full"
@@ -220,8 +236,8 @@ const Header = () => {
             className="h-6 md:h-8 w-auto "
           />
           <img src={wLogo} alt="Wave" className="h-6 md:h-8 w-auto " />
-          <img src={chattriz} alt="Chatrizz" className="h-6 md:h-8 w-auto " />
-          <img src={needs} alt="Needz" className="h-6 md:h-8 w-auto " />
+          <img src={snip} alt="Chatrizz" className="h-6 md:h-8 w-auto " />
+          <img src={ship} alt="Needz" className="h-6 md:h-8 w-auto " />
         </div>
       </div>
     </div>

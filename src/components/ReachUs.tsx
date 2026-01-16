@@ -32,7 +32,12 @@ const ReachUs = () => {
             {/* Download Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 items-center lg:items-start">
               {/* Google Play Button */}
-              <button className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]">
+              <a
+                href="https://play.google.com/store/apps/details?id=app.Sync360.us"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
+              >
                 <img
                   src={play || "/placeholder.svg"}
                   alt="Google Play"
@@ -48,10 +53,15 @@ const ReachUs = () => {
                     Google Play
                   </span>
                 </div>
-              </button>
+              </a>
 
               {/* App Store Button */}
-              <button className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]">
+              <a
+                href="https://apps.apple.com/us/app/Sync360/id6514304272"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
+              >
                 <img
                   src={apple || "/placeholder.svg"}
                   alt="Apple App Store"
@@ -67,7 +77,7 @@ const ReachUs = () => {
                     App Store
                   </span>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
 

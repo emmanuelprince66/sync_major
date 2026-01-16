@@ -1,7 +1,7 @@
 import contentTwo from "../assets/content2.png";
 import contentThree from "../assets/content3.png";
 import contentFour from "../assets/content4.png";
-import contentFive from "../assets/contentFive.png";
+import contentSix from "../assets/content6.png";
 import contentOne from "../assets/contentOne.png";
 
 interface ContentItem {
@@ -14,32 +14,38 @@ const contentItems: ContentItem[] = [
   {
     heading: "Inventory doesn't have to be stressful",
     description:
-      "If you think inventory is just a chore, then you haven't tried Margga. Tracking, organizing and keeping your stock organized is not only easy but incredibly essential for your business.",
+      "If you’re here, inventory is likely a problem  missing items, unclear stock levels, or no system at all. Sync360 helps you manage stock without spreadsheets or expensive ERP tools. Easily see what’s in store, what’s out of stock, who sold what, and keep full control of your business.",
     image: contentOne,
   },
   {
     heading: "Sell beyond your physical store",
     description:
-      "Start ecommerce with a seamless integration to inventory and a custom storefront. Watch your reach and revenue expand beyond limits.",
+      "Sell anywhere with a website connected to inventory and checkout payments. Sync360 automatically records sales, updates stock, and helps you manage your business beyond your physical location.",
     image: contentTwo,
   },
   {
     heading: "A dedicated business account for your payments",
     description:
-      "Stop mixing personal and business money. A dedicated business account that makes accounting and tax filing a breeze. No more hassle.",
+      "Stop mixing personal and business funds. Sync360 helps you accept payments, track transactions automatically, and keep your business finances structured.",
     image: contentThree,
   },
   {
     heading: "You started a business not to become an accountant",
     description:
-      "Agent. Finance makes sure your accounting is done for you. Automate invoices, receipts and stay on top of your finances with ease. Let us handle the numbers while you focus on growth.",
+      "SYNC360 Accounting turns your transactions into clear, structured reports. From revenue tracking to tax-ready summaries, stay compliant, understand your numbers, and make data-driven decisions without the complexity of traditional accounting.",
     image: contentFour,
   },
   {
     heading: "End Shelf Price Errors Forever",
     description:
-      "Real-time inventory syncing means no more overstock, no more stockouts. Your shelf prices are always accurate, always in sync with your system.",
-    image: contentFive,
+      "SYNC360 replaces outdated paper tags with real-time digital pricing. Customers scan a QR code to see the exact price directly from your inventory system  no different prices at checkout, no chaos. Just accuracy, trust, and reliability in every aisle.",
+    image: contentSix,
+  },
+  {
+    heading: "Built to Run Your Business End-to-End",
+    description:
+      "With SYNC360, businesses can organize operations, generate invoices, download real-time reports, manage VAT and WHT compliance, and oversee accounting all from one centralized platform.",
+    image: contentOne,
   },
 ];
 
@@ -56,7 +62,7 @@ const Marquee = () => {
         {[...items, ...items, ...items].map((item, index) => (
           <div
             key={index}
-            className="inline-flex bg-[#2F5034] items-center justify-center px-6 py-3 rounded-full border-2 border-white text-white font-semibold text-sm flex-shrink-0 hover:bg-white hover:text-[#52B661] transition-all duration-300"
+            className="inline-flex bg-[#2F5034] items-center justify-center px-6 py-5 rounded-full border-2 border-white text-white font-semibold text-sm flex-shrink-0 hover:bg-white hover:text-[#52B661] transition-all duration-300"
           >
             {item}
           </div>
