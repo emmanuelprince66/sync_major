@@ -146,7 +146,7 @@ const Content = () => {
               Key Features
             </h1>
             <p className="text-center text-gray-700 text-lg max-w-2xl mx-auto">
-              From inventory to payments to accounting—everything you need to
+              From inventory to payments to accounting , everything you need to
               run and grow your business.
             </p>
           </div>
