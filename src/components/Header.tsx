@@ -182,7 +182,7 @@ const Header = () => {
               href="https://business.sync360.africa"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:hidden w-full px-8 py-3.5 rounded-full font-semibold  transition-all text-base hover:scale-105 hover:bg-[#52B661]/10 text-center"
+              className="md:hidden w-full px-8 py-3.5 bg-transparent bg-none rounded-full font-semibold  transition-all text-base hover:scale-105 hover:bg-transparent text-center"
               style={{
                 color: "#52B661",
                 borderColor: "#52B661",
