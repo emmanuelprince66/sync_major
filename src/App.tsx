@@ -1,18 +1,20 @@
-import { AccordionContent } from "./components/AccordionContent";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import ReachUs from "./components/ReachUs";
+import { Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import TawkToChat from "./components/TawkToChat";
+import Home from "./pages/Home";
+import Loyalty from "./pages/Loyalty";
+import ScanAndPay from "./pages/ScanAndPay";
 
 function App() {
   return (
     <div className="w-full">
-      <Header />
-      <Content />
-      <AccordionContent />
-      <ReachUs />
-      <Footer />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/scan-and-pay" element={<ScanAndPay />} />
+        <Route path="/loyalty" element={<Loyalty />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
       <TawkToChat />
     </div>
   );

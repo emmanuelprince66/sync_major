@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local design/reference docs (not part of the site)
+doc/
+
+# Build archives
+*.zip

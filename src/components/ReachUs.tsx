@@ -1,100 +1,97 @@
 import apple from "../assets/Apple.png";
 import phone from "../assets/phone.png";
 import play from "../assets/playstore.png";
-import logoOne from "../assets/sync360Dark.png";
+import Reveal from "./Reveal";
 
 const ReachUs = () => {
   return (
-    <div className="bg-[#DCE3DD] py-8 px-4">
-      <div className="max-w-[90%] lg:max-w-[70%] mx-auto">
-        <div className="bg-gradient-to-t from-[#0a1810] via-[#1a4d2e] to-[#1a4d2e] rounded-2xl overflow-hidden flex flex-col lg:flex-row items-stretch shadow-xl">
-          <div className="flex-1 px-6 py-8 lg:px-8 lg:py-8 text-white w-full flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Logo/Brand */}
-            <img
-              src={logoOne || "/placeholder.svg"}
-              alt="sync_logo"
-              width="80"
-              height="80"
-              className="object-contain mb-4 lg:mb-6 lg:w-[100px] lg:h-[100px]"
-            />
+    <section className="bg-cream px-4 py-16 md:py-24">
+      <Reveal>
+        <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[32px] bg-primary p-8 md:p-16">
+          <div className="grid-pattern" />
+          <div
+            className="animate-blob-float absolute -bottom-32 -left-20 h-[300px] w-[300px] rounded-full"
+            style={{ background: "radial-gradient(circle, rgba(82,182,97,.3), transparent 70%)" }}
+          />
+          <div
+            className="animate-blob-float absolute -right-16 -top-28 h-[220px] w-[220px] rounded-full"
+            style={{
+              background: "radial-gradient(circle, rgba(30,94,255,.25), transparent 70%)",
+              animationDirection: "reverse",
+            }}
+          />
 
-            {/* Main Heading */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 lg:mb-4 leading-tight">
-              Your business, synced for total growth.
-            </h1>
+          <div className="relative grid grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-10">
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl text-white md:text-4xl">
+                Your business, synced for total growth.
+              </h2>
+              <p className="mx-auto mt-3.5 mb-7 max-w-md text-white/65 md:mx-0">
+                Download the Sync360 app to manage inventory, payments,
+                delivery and loyalty — right from your pocket.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3.5 md:justify-start">
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.open(
+                      "https://play.google.com/store/apps/details?id=com.sync.sink",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5"
+                >
+                  <img src={play} alt="Google Play" className="h-6 w-6 object-contain" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <small className="text-[9.5px] font-semibold text-white/75">
+                      GET IT ON
+                    </small>
+                    <strong className="text-sm font-extrabold text-white">Google Play</strong>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.open(
+                      "https://apps.apple.com/us/app/Sync360/id6514304272",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5"
+                >
+                  <img src={apple} alt="Apple App Store" className="h-6 w-6 object-contain" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <small className="text-[9.5px] font-semibold text-white/75">
+                      Download on the
+                    </small>
+                    <strong className="text-sm font-extrabold text-white">App Store</strong>
+                  </span>
+                </button>
+              </div>
+            </div>
 
-            {/* Subtitle */}
-            <p className="text-sm md:text-base mb-6 lg:mb-8 opacity-90">
-              Get Sync360 and start selling, tracking, and managing your
-              business.
-            </p>
-
-            {/* Download Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 items-center lg:items-start">
-              {/* Google Play Button */}
-              <a
-                href="https://play.google.com/store/apps/details?id=com.sync.sink"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center bg-[#010101] gap-3 bg-black text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
-                style={{ backgroundColor: "#010101" }}
+            <div className="relative mx-auto mt-4 flex max-w-[230px] justify-center md:mt-0">
+              <img
+                src={phone}
+                alt="Sync360 app showing today's sales, expenses and customers"
+                className="animate-card-float w-full max-w-[230px] object-contain drop-shadow-2xl"
+              />
+              <div className="animate-card-float absolute -left-6 top-[8%] hidden items-center gap-2 rounded-2xl bg-white px-3.5 py-2.5 text-xs font-extrabold text-secondary-dark shadow-[0_14px_30px_rgba(0,0,0,0.25)] sm:flex">
+                ✓ Payment received
+              </div>
+              <div
+                className="animate-card-float absolute -right-8 bottom-[12%] hidden items-center gap-2 rounded-2xl bg-white px-3.5 py-2.5 text-xs font-extrabold text-info shadow-[0_14px_30px_rgba(0,0,0,0.25)] sm:flex"
+                style={{ animationDelay: "2s" }}
               >
-                <img
-                  src={play || "/placeholder.svg"}
-                  alt="Google Play"
-                  width="20"
-                  height="20"
-                  className="object-contain lg:w-[24px] lg:h-[24px]"
-                />
-                <div className="flex flex-col items-start gap-0">
-                  <span className="text-[9px] lg:text-[10px] uppercase tracking-wide">
-                    GET IT ON
-                  </span>
-                  <span className="text-xs lg:text-base font-semibold">
-                    Google Play
-                  </span>
-                </div>
-              </a>
-
-              {/* App Store Button */}
-              <a
-                href="https://apps.apple.com/us/app/Sync360/id6514304272"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center bg-[#010101] gap-3  text-white px-4 py-2.5 lg:px-7 lg:py-3 rounded-lg hover:bg-gray-900 transition-colors font-medium min-w-[160px] lg:min-w-[180px]"
-                style={{ backgroundColor: "#010101" }}
-              >
-                <img
-                  src={apple || "/placeholder.svg"}
-                  alt="Apple App Store"
-                  width="20"
-                  height="20"
-                  className="object-contain lg:w-[24px] lg:h-[24px]"
-                />
-                <div className="flex flex-col items-start gap-0">
-                  <span className="text-[9px] lg:text-[10px] tracking-wide">
-                    Download on the
-                  </span>
-                  <span className="text-xs lg:text-base font-semibold">
-                    App Store
-                  </span>
-                </div>
-              </a>
+                📦 Order shipped
+              </div>
             </div>
           </div>
-
-          <div className="flex-1 relative w-full lg:w-auto flex items-end justify-center pb-0">
-            <img
-              src={phone || "/placeholder.svg"}
-              alt="SyncGeo App"
-              width="200"
-              height="300"
-              className="object-contain object-bottom drop-shadow-2xl lg:w-[250px] lg:h-auto max-h-[350px] lg:max-h-[450px]"
-            />
-          </div>
         </div>
-      </div>
-    </div>
+      </Reveal>
+    </section>
   );
 };
 

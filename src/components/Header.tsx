@@ -1,248 +1,276 @@
+import { Link } from "react-router-dom";
 import baseOne from "../assets/base1.png";
 import baseTwo from "../assets/base2.png";
 import baseThree from "../assets/base3.png";
 import baseFour from "../assets/base4.png";
-import headerSvg from "../assets/header_svg.png";
-import ship from "../assets/ship.jpeg";
-import snip from "../assets/snip.jpeg";
-import standforth from "../assets/standforth.png";
 import syn from "../assets/sync.svg";
-import syncDarkLogo from "../assets/sync360Dark.png";
-import vfd from "../assets/vfd.jpeg";
-import wLogo from "../assets/wLogo.png";
+import { img, links } from "../lib/designImages";
+import TrustedBy from "./TrustedBy";
+import Reveal from "./Reveal";
+
+const stats = [
+  { icon: baseOne, label: "Sales Powered", value: "1.2B+", tone: "info" },
+  { icon: baseTwo, label: "Active Businesses", value: "100+", tone: "warning" },
+  { icon: baseThree, label: "Total Sales", value: "₦42,000+", tone: "success" },
+  { icon: baseFour, label: "Reliable", value: "99.9%", tone: "error" },
+] as const;
+
+const toneClasses: Record<string, string> = {
+  info: "bg-info-light text-info",
+  warning: "bg-warning-light text-warning",
+  success: "bg-success-light text-success",
+  error: "bg-error-light text-error",
+};
+
+const avatarPhotos = [
+  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=100&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
+];
 
 const Header = () => {
   return (
-    <div className="bg-[#DCE3DD] min-h-screen flex flex-col relative overflow-hidden">
-      {/* Background SVG - Behind navbar */}
-      <div className="absolute top-0 left-0 w-full h-auto pointer-events-none z-0">
-        <img
-          src={headerSvg}
-          alt=""
-          className="w-[20%] md:w-[20%] h-auto object-cover"
-        />
+    <div className="bg-cream">
+      {/* Announcement bar */}
+      <div className="bg-secondary-dark px-4 py-2.5 text-center text-[13.5px] font-bold text-white">
+        Scan &amp; Pay is live — your customers can skip the till entirely.
+        <Link
+          to="/scan-and-pay"
+          className="ml-2 whitespace-nowrap underline transition-colors hover:text-primary"
+        >
+          See how it works →
+        </Link>
       </div>
 
-      {/* Navigation Bar with backdrop blur */}
-      <nav
-        className="px-6 md:px-12 py-4 md:py-4 flex items-center justify-center md:justify-between relative z-20"
+      {/* Nav */}
+      <header className="sticky top-0 z-50 border-b border-primary/10 bg-cream/85 backdrop-blur-md">
+        <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-3 md:px-12">
+          <Link to="/" className="flex items-center">
+            <img src={syn} alt="Sync360" className="h-14 w-auto md:h-16" />
+          </Link>
+          <ul className="hidden items-center gap-7 text-sm font-bold text-grey-600 lg:flex">
+            <li>
+              <a
+                href="#features"
+                className="hover:text-primary transition-colors"
+              >
+                Products
+              </a>
+            </li>
+            <li>
+              <Link
+                to="/scan-and-pay"
+                className="hover:text-primary transition-colors"
+              >
+                Scan &amp; Pay
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/loyalty"
+                className="hover:text-primary transition-colors"
+              >
+                Loyalty
+              </Link>
+            </li>
+            <li>
+              <a
+                href="#industries"
+                className="hover:text-primary transition-colors"
+              >
+                Industries
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-primary transition-colors"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() =>
+                window.open(
+                  links.login,
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+              className="hidden cursor-pointer text-sm font-bold text-secondary-dark hover:opacity-70 transition-opacity md:block"
+            >
+              Log in
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                window.open(
+                  links.signup,
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+              className="cursor-pointer rounded-full bg-secondary px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-0.5 hover:bg-secondary-dark md:px-6 md:py-3"
+            >
+              Get Started
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section
+        className="relative overflow-hidden pt-10 pb-0 md:pt-16"
         style={{
-          backgroundColor: "rgba(220, 227, 221, 0.4)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          borderBottom: "1px solid rgba(47, 80, 52, 0.2)",
+          background:
+            "radial-gradient(ellipse 900px 600px at 15% -10%, #1c4632 0%, #0D261C 55%)",
         }}
       >
-        <div className="flex items-center z-100">
-          <img src={syn} alt="Sync360" className="h-20 md:h-15 w-auto z-100" />
-        </div>
-        <div className="hidden md:flex items-center gap-3 md:gap-4">
-          <a
-            href="https://business.sync360.africa/signup"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 md:px-6 py-2 md:py-2.5 cursor-pointer rounded-full font-semibold transition-all text-sm md:text-base hover:scale-105 hover:shadow-lg text-center"
-            style={{ backgroundColor: "#52B661", color: "#DCE3DD" }}
-          >
-            Get Started
-          </a>
-          <a
-            href="https://business.sync360.africa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs md:text-sm cursor-pointer font-semibold hover:opacity-70 transition-all"
-            style={{ color: "#52B661" }}
-          >
-            Sign In
-          </a>
-        </div>
-      </nav>
+        <div className="grid-pattern" />
+        <div
+          className="animate-blob-float absolute -right-[6%] -top-24 h-[280px] w-[280px] rounded-full opacity-50 blur-sm md:h-[340px] md:w-[340px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(82,182,97,.55), transparent 70%)",
+          }}
+        />
+        <div
+          className="animate-blob-float absolute -bottom-16 left-[2%] h-[200px] w-[200px] rounded-full opacity-50 blur-sm md:h-[260px] md:w-[260px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(30,94,255,.4), transparent 70%)",
+            animationDelay: "2.4s",
+          }}
+        />
+        <div
+          className="animate-blob-float absolute right-[36%] top-[40%] hidden h-[180px] w-[180px] rounded-full opacity-50 blur-sm md:block"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201,154,46,.4), transparent 70%)",
+            animationDelay: "4.6s",
+          }}
+        />
 
-      {/* Main Content */}
-      <div className="flex-1 relative px-6 md:px-12   md:py-24 flex flex-col items-center justify-center z-10">
-        {/* Decorative Elements - Arc shapes */}
-        <svg
-          className=" md:-top-3 hidden md:block absolute left-1/2 transform -translate-x-1/2 md:-right-16 md:w-16 md:h-16 lg:w-20 lg:h-20"
-          viewBox="0 0 51 51"
-          fill="#131914"
-          opacity="0.6"
-        >
-          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-        </svg>
-        {/* Bottom left arc */}
-        <svg
-          className="absolute bottom-[200px] left-6 md:bottom-1/4 md:left-24 w-5 h-5 md:w-7 md:h-7"
-          viewBox="0 0 51 51"
-          fill="#131914"
-        >
-          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-        </svg>
-
-        {/* Bottom right arc */}
-        <svg
-          className="absolute bottom-5 right-8 md:bottom-40 md:right-32 w-6 h-6 md:w-8 md:h-8"
-          viewBox="0 0 51 51"
-          fill="#131914"
-        >
-          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-        </svg>
-
-        {/* Center right dot */}
-        <svg
-          className="absolute top-1/3 right-12 md:top-2/5 md:right-16 w-3 h-3 md:w-4 md:h-4"
-          viewBox="0 0 24 24"
-          fill="#131914"
-        >
-          <circle cx="12" cy="12" r="3" />
-        </svg>
-
-        {/* Center left arc */}
-        <svg
-          className="absolute top-1/11 left-12 md:top-1/2 md:left-20 w-4 h-4 md:w-6 md:h-6"
-          viewBox="0 0 51 51"
-          fill="#131914"
-        >
-          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-        </svg>
-
-        <div className="text-center max-w-4xl">
-          {/* Sync360 Badge */}
-          <p
-            className="text-xs md:text-sm font-bold mb-8 md:mb-12 mt-4 tracking-wide philosopher-font"
-            style={{ color: "#52B661" }}
-          >
-            SYNC360
-          </p>
-
-          {/* Main Headline - Figma: 96px, line-height 94px, -1% letter-spacing */}
-          <div className="relative mb-8 md:mb-10">
-            <p className="text-[40px] text-[#131914] philosopher-font md:text-[5rem] lg:text-[5rem] font-bold philosopher-font">
-              Run your entire{" "}
-              <span
-                style={{ color: "#52B661" }}
-                className="relative inline-block"
-              >
-                business
-                {/* First SVG Arc - Bigger */}
+        <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 px-6 pb-14 md:grid-cols-[1.05fr_0.95fr] md:px-12 md:pb-20">
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl leading-tight text-white md:text-[3.2rem]">
+              The{" "}
+              <span className="relative inline-block text-secondary">
+                Intelligent
                 <svg
-                  className="hidden md:block md:absolute md:-top-6 md:-right-8 md:w-14 md:h-14 lg:w-16 lg:h-16"
+                  className="absolute -right-7 -top-6 hidden h-10 w-10 md:block"
                   viewBox="0 0 51 51"
-                  fill="#131914"
+                  fill="#7AE48A"
+                  opacity="0.7"
                 >
                   <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
                 </svg>
-                {/* Second SVG Arc - Even Bigger, Further Away */}
               </span>{" "}
-              from one system
+              Business Operating System for African Businesses.
+            </h1>
+
+            <p className="mx-auto mt-5 max-w-lg text-base text-white/70 md:mx-0 md:text-lg">
+              Every transaction. Every customer. Every decision. Connected in one
+              platform that helps you operate smarter, understand your business,
+              and grow with confidence.
             </p>
-          </div>
 
-          {/* Subheading - Figma: Nunito 24px, line-height 100%, -1.8% letter-spacing */}
-          <p
-            className="text-base md:text-xl lg:text-2xl mb-12 md:mb-16 max-w-3xl mx-auto font-normal"
-            style={{
-              color: "#131914",
-              letterSpacing: "-0.018em",
-              lineHeight: "30px",
-            }}
-          >
-            Sync360 is the business operating system that connects how SMEs
-            sell, track money and stay compliant all in one platform
-          </p>
+            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+              <button
+                type="button"
+                onClick={() =>
+                  window.open(
+                    links.signup,
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                className="cursor-pointer rounded-full bg-secondary px-8 py-3.5 text-center text-base font-extrabold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-1 hover:bg-secondary-dark"
+              >
+                Get Started Free
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  window.open(
+                    links.whatsapp,
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                className="cursor-pointer rounded-full border-[1.5px] border-white/40 bg-white/5 px-8 py-3.5 text-center text-base font-extrabold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
+              >
+                Watch Demo
+              </button>
+            </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center mb-1 md:mb-28">
-            {/* Get Started */}
-            <a
-              href="https://business.sync360.africa/signup"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold transition-all text-base md:text-lg hover:scale-105 hover:shadow-xl hover:bg-[#234028] text-center"
-              style={{ backgroundColor: "#52B661", color: "#DCE3DD" }}
-            >
-              Get Started
-            </a>
-
-            {/* Request a Demo */}
-            <a
-              href="https://wa.me/message/BEC7OOFPUWZZK1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 rounded-full font-semibold border-2 transition-all text-base md:text-lg hover:scale-105 hover:bg-[#131914] hover:text-white hover:border-[#131914] text-center"
-              style={{
-                backgroundColor: "transparent",
-                borderColor: "#131914",
-                color: "#131914",
-              }}
-            >
-              Request a Demo
-            </a>
-
-            {/* Sign In - Mobile Only */}
-            <a
-              href="https://business.sync360.africa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="md:hidden w-full px-8 py-3.5 bg-transparent bg-none rounded-full font-semibold  transition-all text-base hover:scale-105 hover:bg-transparent text-center"
-              style={{
-                color: "#52B661",
-                borderColor: "#52B661",
-              }}
-            >
-              Sign In
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="w-full flex justify-center mx-auto p-4 md:p-0">
-        <div className="mx-4 md:mx-12 mb-12 md:mb-16 bg-[#2F5034] rounded-2xl w-full md:w-[70%] mx-auto md:rounded-3xl p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 relative z-10">
-          {[
-            { icon: baseOne, label: "Sales Powered", value: "1.2B+" },
-            { icon: baseTwo, label: "Active Businesses", value: "100+" },
-            { icon: baseThree, label: "Total Sales", value: "₦42,000+" },
-            { icon: baseFour, label: "Reliable", value: "99.9%" },
-          ].map((stat, idx) => (
-            <div
-              key={idx}
-              className="flex md:flex-row flex-col items-center justify-center md:justify-start gap-3 md:gap-4 text-center md:text-left"
-            >
-              <span className="text-2xl md:text-3xl hidden md:block">
-                <img src={stat.icon} alt="" />
+            <div className="mt-7 flex items-center justify-center gap-3.5 md:justify-start">
+              <div className="flex">
+                {avatarPhotos.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt=""
+                    className="-ml-2.5 h-9 w-9 rounded-full border-2 border-primary object-cover first:ml-0"
+                  />
+                ))}
+              </div>
+              <span className="text-[13.5px] font-bold text-white/65">
+                Trusted by <b className="text-white">10,000+</b> business owners
+                across Nigeria
               </span>
-              <div>
-                <p
-                  className="text-2xl md:text-3xl font-bold philosopher-font"
-                  style={{ color: "#DCE3DD" }}
-                >
-                  {stat.value}
-                </p>
-                <p className="text-sm md:text-sm" style={{ color: "#DCE3DD" }}>
-                  {stat.label}
-                </p>
+            </div>
+          </div>
+
+          <Reveal>
+            <div className="relative mx-auto max-w-[360px] md:mx-0 md:max-w-none">
+              <div className="relative aspect-[1/1.05] overflow-hidden rounded-[28px] shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
+                <img
+                  src={img.heroOwner}
+                  alt="Business owner using the Sync360 app, with live sales and stock value overlays"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
-          ))}
+          </Reveal>
         </div>
-      </div>
-      {/* Trusted by Companies Worldwide */}
-      <div
-        className="px-6 md:px-6 py-5 md:py-3 relative z-10 w-full"
-        style={{ backgroundColor: "#131914" }}
-      >
-        <div className="flex flex-wrap items-center w-full justify-center gap-8 md:gap-35">
-          <img src={wLogo} alt="Wise" className="h-6 md:h-8 w-auto " />
-          <img src={standforth} alt="Wise" className="h-10 md:h-15 w-auto " />
-          <img src={vfd} alt="Wise" className="h-6 md:h-8 w-auto " />
-          <img
-            src={syncDarkLogo}
-            alt="Sync360"
-            className="h-6 md:h-8 w-auto "
-          />
-          <img src={snip} alt="Chatrizz" className="h-6 md:h-8 w-auto " />
-          <img src={ship} alt="Needz" className="h-6 md:h-8 w-auto " />
-        </div>
-      </div>
+      </section>
+
+      {/* Stats band */}
+      <section className="bg-cream px-4 py-10 md:px-0">
+        <Reveal>
+          <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-4 px-2 md:grid-cols-4 md:gap-5">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className={`rounded-2xl px-4 py-6 text-center ${toneClasses[stat.tone]}`}
+              >
+                <img
+                  src={stat.icon}
+                  alt=""
+                  className="mx-auto mb-2 h-8 w-8 object-contain"
+                />
+                <b className="block text-2xl font-black md:text-3xl">
+                  {stat.value}
+                </b>
+                <span className="text-xs font-bold text-grey-600 md:text-[13px]">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Trusted-by logo grid */}
+      <TrustedBy
+        eyebrow="Our partners"
+        heading="Trusted by growing businesses across Africa"
+        subheading="Powering payments, logistics and inventory for shops of every size."
+      />
     </div>
   );
 };

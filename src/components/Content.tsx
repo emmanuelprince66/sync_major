@@ -1,100 +1,120 @@
-import contentTwo from "../assets/content2.png";
-import contentThree from "../assets/content3.png";
-import contentFour from "../assets/content4.png";
-import contentOne from "../assets/contentOne.png";
-import ePricing from "../assets/e-pricing.jpeg";
+import { img, links } from "../lib/designImages";
+import ImageSlider from "./ImageSlider";
+import type { Slide } from "./ImageSlider";
+import Reveal from "./Reveal";
 
 interface ContentItem {
   heading: string;
   description: string;
-  image: string;
+  slides: Slide[];
+  badge: string;
+  badgeClass: string;
   buttonText?: string;
   buttonLink?: string;
   buttonDisabled?: boolean;
-  buttonVariant?: "primary" | "demo" | "disabled";
+  /** Renders the image contained on a dark panel (for app screenshots). */
+  contain?: boolean;
 }
 
 const contentItems: ContentItem[] = [
   {
-    heading: "Inventory doesn't have to be stressful",
+    heading: "Turn Inventory Into Intelligence.",
     description:
-      "If you’re here, inventory is likely a problem ,  missing items, unclear stock levels, or no system at all. Sync360 helps you manage stock without spreadsheets or expensive ERP tools. Easily see what’s in store, what’s out of stock, who sold what, and keep full control of your business.",
-    image: contentOne,
+      "Know what's in stock, what's selling, what's running low, and what's slowing down all in real time. Sync360 gives you the visibility and insights to reduce losses, improve cash flow, and make smarter inventory decisions.",
+    slides: [
+      {
+        src: img.inventoryTablet,
+        alt: "Business owner checking inventory on a tablet in her store",
+      },
+      {
+        src: img.inventoryFridge,
+        alt: "Staff member checking fridge stock with a tablet",
+      },
+      {
+        src: img.inventoryApparel,
+        alt: "Retail staff scanning apparel stock with a handheld device",
+      },
+    ],
+    badge: "Inventory",
+    badgeClass: "bg-info-light text-info",
     buttonText: "Get Started",
-    buttonLink: "https://business.sync360.africa/signup",
-    buttonVariant: "primary",
+    buttonLink: links.signup,
   },
   {
-    heading: "Sell beyond your physical store",
+    heading: "Sell Everywhere. Manage Everything.",
     description:
-      "Sell anywhere with a website connected to inventory and checkout payments. Sync360 automatically records sales, updates stock, and helps you manage your business beyond your physical location.",
-    image: contentTwo,
+      "Grow beyond your physical store with a connected online storefront. Sync360 automatically syncs inventory, payments, orders, and customer data giving you one real-time view of your entire business.",
+    slides: [
+      {
+        src: img.onlineCheckout,
+        alt: "Customer checking out online with a phone and card",
+      },
+      {
+        src: img.onlineBrowsing,
+        alt: "Customer browsing an online store on their phone",
+      },
+    ],
+    badge: "Online Store",
+    badgeClass: "bg-secondary-light text-secondary-dark",
     buttonText: "Get Started",
-    buttonLink: "https://business.sync360.africa/signup",
-    buttonVariant: "primary",
+    buttonLink: links.signup,
   },
   {
-    heading: "A dedicated business account for your payments",
+    heading: "Take Control of Your Business Finances.",
     description:
-      "Stop mixing personal and business funds. Sync360 helps you accept payments, track transactions automatically, and keep your business finances structured.",
-    image: contentThree,
+      "Separate business from personal finances with a dedicated business account that helps you accept payments, reconcile transactions, and manage cash flow with confidence.",
+    slides: [
+      {
+        src: img.contactlessPay,
+        alt: "Customer paying with a contactless phone tap at checkout",
+      },
+    ],
+    badge: "Payments",
+    badgeClass: "bg-warning-light text-warning",
     buttonText: "Get Started",
-    buttonLink: "https://business.sync360.africa/signup",
-    buttonVariant: "primary",
+    buttonLink: links.signup,
   },
   {
-    heading: "You started a business not to become an accountant",
+    heading: "Your Business Deserves Better Than Spreadsheets.",
     description:
-      "SYNC360 Accounting turns your transactions into clear, structured reports. From revenue tracking to tax-ready summaries, stay compliant, understand your numbers, and make data-driven decisions without the complexity of traditional accounting.",
-    image: contentFour,
+      "Track revenue, monitor expenses, generate financial reports, and stay tax-ready all from one intelligent platform built to help you make confident decisions.",
+    slides: [
+      {
+        src: img.appDashboard,
+        alt: "Sync360 app dashboard showing balance, sales, expenses and transactions",
+      },
+    ],
+    badge: "Reports",
+    badgeClass: "bg-error-light text-error",
     buttonText: "Coming Soon",
     buttonDisabled: true,
-    buttonVariant: "disabled",
-  },
-  {
-    heading: "End Shelf Price Errors Forever In Your Supermarket",
-    description:
-      "SYNC360 replaces outdated paper tags with real-time digital pricing. Customers scan a QR code to see the exact price directly from your inventory system , no different prices at checkout, no chaos. Just accuracy, trust, and reliability in every aisle.",
-    image: ePricing,
-    buttonText: "Request a Demo",
-    buttonLink: "https://wa.me/message/BEC7OOFPUWZZK1",
-    buttonVariant: "demo",
-  },
-  {
-    heading: "Built to Run Your Business End-to-End",
-    description:
-      "With SYNC360, businesses can organize operations, generate invoices, download real-time reports, manage VAT and WHT compliance, and oversee accounting all from one centralized platform.",
-    image: contentOne,
-    buttonText: "Get Started",
-    buttonLink: "https://business.sync360.africa/signup",
-    buttonVariant: "primary",
+    contain: true,
   },
 ];
 
-const Marquee = () => {
-  const items = [
-    "✨ Manage your business smarter",
-    "💼 Sell everywhere",
-    "📈 Grow faster",
-    "⚡ Automate everything",
-    "💸 Expenses",
-    "👥 Customer Management",
-    "🛒 Store Front",
-    "📊 Sales Manager",
-    "📑 Accounting",
-    "📈 Reporting",
-  ];
+const marqueeItems = [
+  "✨ Manage your business smarter",
+  "💼 Sell everywhere",
+  "📈 Grow faster",
+  "⚡ Automate everything",
+  "💸 Expenses",
+  "👥 Customer Management",
+  "🛒 Store Front",
+  "📊 Sales Manager",
+  "📑 Accounting",
+  "📈 Reporting",
+];
 
-  // Duplicate enough times to ensure seamless loop even on wide screens
-  const duplicatedItems = [...items, ...items, ...items, ...items];
+const Marquee = () => {
+  const duplicatedItems = [...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems];
 
   return (
-    <div className="w-full overflow-hidden bg-[#B9C6BB] py-8">
+    <div className="w-full overflow-hidden bg-cream py-8">
       <div className="inline-flex animate-marquee whitespace-nowrap">
         {duplicatedItems.map((item, index) => (
           <div
             key={index}
-            className="flex-shrink-0 mx-5 px-6 py-5 bg-[#2F5034] rounded-full border-2 border-white text-white font-semibold text-sm flex items-center justify-center hover:bg-white hover:text-[#52B661] transition-all duration-300"
+            className="mx-2.5 flex shrink-0 items-center justify-center rounded-full border-2 border-white bg-primary px-6 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-secondary-dark"
           >
             {item}
           </div>
@@ -106,139 +126,85 @@ const Marquee = () => {
 
 const Content = () => {
   return (
-    <div
-      style={{ backgroundColor: "#DCE3DD" }}
-      className="w-full min-h-screen relative flex flex-col items-center justify-center"
-    >
-      <div className="w-full md:w-[70%] mx-auto">
-        {/* Decorative SVGs */}
-        <svg
-          className="absolute top-10 left-6 md:top-40 md:left-12 w-8 h-8 md:w-15 md:h-15"
-          viewBox="0 0 51 51"
-          fill="#131914"
-        >
-          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-        </svg>
+    <div id="features" className="w-full bg-secondary-light py-16 md:py-24">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-12">
+        <Reveal className="mx-auto mb-16 max-w-2xl text-center md:mb-20">
+          <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-secondary-dark">
+            <span className="h-1.5 w-1.5 rounded-full bg-current" />
+            Key features
+          </span>
+          <h2 className="mt-3 text-3xl md:text-4xl">
+            Let's unveil what makes this platform a game-changer
+          </h2>
+          <p className="mt-3 text-grey-600">
+            Every tool you need to run day-to-day operations, built around how
+            African SMEs actually work.
+          </p>
+        </Reveal>
 
-        <svg
-          className="absolute top-1/2 right-8 md:top-1/2 md:right-16 w-8 h-8 md:w-12 md:h-12"
-          viewBox="0 0 51 51"
-          fill="#131914"
-        >
-          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-        </svg>
-
-        <svg
-          className="absolute bottom-64 left-1/2 md:bottom-72 md:left-1/3 w-10 h-10 md:w-12 md:h-12"
-          viewBox="0 0 51 51"
-          fill="#131914"
-        >
-          <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-        </svg>
-
-        {/* Header */}
-        <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h1
-              className="text-4xl sm:text-5xl font-bold text-center mb-4"
-              style={{ fontFamily: "philosopher" }}
-            >
-              Key Features
-            </h1>
-            <p className="text-center text-gray-700 text-lg max-w-2xl mx-auto">
-              From inventory to payments to accounting , everything you need to
-              run and grow your business.
-            </p>
-          </div>
-        </div>
-
-        {/* Content Items */}
-        <div className="w-full px-4 sm:px-6 lg:px-0 pb-16">
-          <div className="w-full mx-auto space-y-8 lg:space-y-12">
-            {contentItems.map((item, index) => (
-              <div key={index} className="w-full">
-                <div
-                  style={{ backgroundColor: "#D8DFD9" }}
-                  className="rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg"
-                >
-                  <div
-                    className={`flex flex-col ${
-                      index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                    } gap-8 lg:gap-12 items-center`}
+        {/* Extra breathing room between rows — not in the design file, added on request. */}
+        <div className="space-y-20 md:space-y-32">
+          {contentItems.map((item, index) => (
+            <Reveal key={item.heading}>
+              <div
+                className={`flex flex-col items-center gap-10 md:gap-16 ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
+              >
+                <div className="w-full lg:w-1/2">
+                  <span
+                    className={`mb-4 inline-flex items-center rounded-full px-4 py-1.5 text-xs font-extrabold ${item.badgeClass}`}
                   >
-                    {/* Text Content */}
-                    <div className="w-full lg:w-1/2">
-                      <h2
-                        className="text-2xl sm:text-3xl font-bold mb-4 leading-tight text-gray-900"
-                        style={{ fontFamily: "philosopher" }}
-                      >
-                        {item.heading}
-                      </h2>
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
-                        {item.description}
-                      </p>
+                    {item.badge}
+                  </span>
+                  <h3 className="mb-3 text-2xl leading-snug text-grey-900 md:text-[27px]">
+                    {item.heading}
+                  </h3>
+                  <p className="mb-6 text-grey-600">{item.description}</p>
 
-                      {/* Dynamic Button */}
-                      {item.buttonVariant === "primary" && (
-                        <a
-                          href={item.buttonLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block px-6 py-3 rounded-lg font-medium text-white bg-[#52B661] hover:opacity-90 transition-opacity"
-                          style={{
-                            backgroundColor: "#52B661",
-                            color: "#DCE3DD",
-                          }}
-                        >
-                          {item.buttonText}
-                        </a>
-                      )}
+                  {item.buttonDisabled ? (
+                    <button
+                      disabled
+                      className="cursor-not-allowed rounded-full bg-grey-300 px-8 py-3.5 font-extrabold text-grey-600"
+                    >
+                      {item.buttonText}
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        window.open(item.buttonLink, "_blank", "noopener,noreferrer")
+                      }
+                      className="inline-flex cursor-pointer rounded-full bg-secondary px-8 py-3.5 font-extrabold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-1 hover:bg-secondary-dark"
+                    >
+                      {item.buttonText}
+                    </button>
+                  )}
+                </div>
 
-                      {item.buttonVariant === "demo" && (
-                        <a
-                          href={item.buttonLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block px-6 py-3 rounded-lg font-medium border-2 border-[#131914] text-[#131914] hover:bg-[#131914] hover:text-white transition-all"
-                        >
-                          {item.buttonText}
-                        </a>
-                      )}
-
-                      {item.buttonVariant === "disabled" && (
-                        <button
-                          disabled
-                          className="px-6 py-3 rounded-lg font-medium bg-gray-300 text-gray-500 cursor-not-allowed"
-                        >
-                          {item.buttonText}
-                        </button>
-                      )}
+                <div className="w-full lg:w-1/2">
+                  {item.contain ? (
+                    <div className="flex aspect-[4/3.1] items-center justify-center overflow-hidden rounded-[22px] bg-primary">
+                      <img
+                        src={item.slides[0].src}
+                        alt={item.slides[0].alt}
+                        loading="lazy"
+                        className="h-full w-auto object-contain"
+                      />
                     </div>
-
-                    {/* Image Content */}
-                    <div className="w-full lg:w-1/2">
-                      <div className="w-full h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden flex items-center justify-center">
-                        <img
-                          src={item.image || "/placeholder.svg"}
-                          alt={item.heading}
-                          className={`w-full h-full object-contain p-4 ${
-                            item?.buttonVariant === "demo"
-                              ? "rounded-[200px]"
-                              : ""
-                          }`}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  ) : (
+                    <ImageSlider slides={item.slides} />
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
+            </Reveal>
+          ))}
         </div>
       </div>
 
-      {/* Marquee Footer */}
-      <Marquee />
+      <div className="mt-20 md:mt-32">
+        <Marquee />
+      </div>
     </div>
   );
 };

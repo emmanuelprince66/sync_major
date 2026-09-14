@@ -1,9 +1,38 @@
 /* src/index.css */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Philosopher:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Philosopher:wght@400;700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #0d261c;
+  --color-primary-soft: #153328;
+  --color-secondary: #52b661;
+  --color-secondary-dark: #3d9950;
+  --color-secondary-light: #e4f5e7;
+  --color-info: #1e5eff;
+  --color-info-light: #e8effe;
+  --color-warning: #c99a2e;
+  --color-warning-light: #fbf3de;
+  --color-error: #e5484d;
+  --color-error-light: #fbdadc;
+  --color-success: #2e9e5b;
+  --color-success-light: #dcf3e4;
+  --color-cream: #faf9f1;
+  --color-grey-900: #17201c;
+  --color-grey-600: #5c6a62;
+  --color-grey-300: #d8dfd9;
+  --color-grey-100: #f1f3ef;
+}
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 :root {
@@ -13,27 +42,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Base marquee animation - slower on larger screens (nice and readable) */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 35s linear infinite;
-}
-
-/* Optional: Slightly faster on mobile for more energy */
-@media (max-width: 767px) {
-  .animate-marquee {
-    animation-duration: 25s;
-  }
 }
 
 /* CSS variable for Philosopher font */
@@ -50,4 +58,162 @@ h5,
 h6 {
   font-family: "Philosopher", sans-serif;
   font-weight: 700;
+}
+
+/* --- marquee (partner logos / keyword pills) --- */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 35s linear infinite reverse;
+}
+
+@media (max-width: 767px) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-duration: 25s;
+  }
+}
+
+/* --- dot-grid texture used on dark bands --- */
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  animation: gridDrift 30s linear infinite;
+}
+
+@keyframes gridDrift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 130px 130px;
+  }
+}
+
+/* dark variant, for the dot grid over light backgrounds */
+.grid-pattern-dark {
+  background-image: radial-gradient(rgba(13, 38, 28, 0.08) 1.5px, transparent 1.5px);
+}
+
+/* --- loyalty streak stamps popping in --- */
+@keyframes streakPop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-streak-pop {
+  opacity: 0;
+  animation: streakPop 0.45s ease forwards;
+}
+
+/* --- floating blur blobs --- */
+@keyframes blobFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-22px) scale(1.06);
+  }
+}
+
+.animate-blob-float {
+  animation: blobFloat 9s ease-in-out infinite;
+}
+
+/* --- floating info cards --- */
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-card-float {
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+/* --- radar ping markers (map/logistics) --- */
+@keyframes pingOut {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-ping-out {
+  animation: pingOut 2.2s ease-out infinite;
+}
+
+/* --- flying sms/email chips --- */
+@keyframes flyUp {
+  0% {
+    transform: translateY(10px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-14px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0.7;
+  }
+}
+
+.animate-fly-up {
+  animation: flyUp 4s ease-in-out infinite;
+}
+
+/* --- scroll reveal (see Reveal.tsx) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation: none !important;
+  }
 }

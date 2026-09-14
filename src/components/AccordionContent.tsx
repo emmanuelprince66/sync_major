@@ -1,12 +1,18 @@
-"use client";
-
 import { useState } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import Reveal from "./Reveal";
 
 interface FAQItem {
-  id: string;
+  id?: string;
   question: string;
   answer: string;
+}
+
+interface AccordionContentProps {
+  eyebrow?: string;
+  heading?: string;
+  /** Overrides the default platform FAQ (used by the Loyalty page). */
+  items?: FAQItem[];
+  sectionBg?: string;
 }
 
 const faqData: FAQItem[] = [
@@ -36,9 +42,9 @@ const faqData: FAQItem[] = [
   },
   {
     id: "5",
-    question: "What if my business doesn't have an inventory system?",
+    question: "Does Sync work for restaurants and salons differently?",
     answer:
-      "Does Sync work for restaurants and salons differently? Yes, Sync provides specialized features tailored to each industry to maximize efficiency.",
+      "Yes, Sync provides specialized features tailored to each industry to maximize efficiency.",
   },
   {
     id: "6",
@@ -54,109 +60,69 @@ const faqData: FAQItem[] = [
   },
 ];
 
-// Decorative star icon in 4 different sizes
-const DecorativeStar = ({ size = "w-5 h-5", position = "top-10 left-10" }) => (
-  <svg
-    className={`absolute ${size} ${position}`}
-    stroke="#7AE48A"
-    viewBox="0 0 51 51"
-    fill="#7AE48A"
-  >
-    <path d="M25.5 25.5C25.5 33.5 21 38 12.75 38.25C21 38.25 25.5 42.75 25.5 51C25.5 42.75 30 38.25 38.25 38.25C30 38.25 25.5 33.5 25.5 25.5Z" />
-  </svg>
-);
-
-export const AccordionContent = () => {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+export const AccordionContent = ({
+  eyebrow = "Frequently asked",
+  heading = "Questions? We've got answers.",
+  items = faqData,
+  sectionBg = "bg-cream",
+}: AccordionContentProps = {}) => {
+  // The design opens the first question by default, and only one at a time.
+  const [expandedId, setExpandedId] = useState<string | null>(
+    items[0]?.id ?? "0"
+  );
 
   const toggleAccordion = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
   };
 
   return (
-    <div className="min-h-screen w-full  bg-[#2F5034] text-white px-6 py-16 md:py-24 relative overflow-hidden">
-      {/* Decorative stars positioned around the page */}
+    <section id="faq" className={`py-16 md:py-24 ${sectionBg}`}>
+      <div className="mx-auto max-w-[1200px] px-6 md:px-12">
+        <Reveal className="mx-auto mb-14 max-w-2xl text-center md:mb-16">
+          <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-secondary-dark">
+            <span className="h-1.5 w-1.5 rounded-full bg-current" />
+            {eyebrow}
+          </span>
+          <h2 className="mt-3 text-3xl md:text-4xl">{heading}</h2>
+        </Reveal>
 
-      <div className="w-full md:w-[70%] mx-auto">
-        <DecorativeStar
-          size="w-5 h-5 md:w-12 md:h-12"
-          position="top-10 right-8 md:top-16 md:right-12"
-        />
-        <DecorativeStar
-          size="w-6 h-6 md:w-11 md:h-11"
-          position="bottom-40 left-4 md:bottom-48 md:left-8"
-        />
-        <DecorativeStar
-          size="w-7 h-7 md:w-11 md:h-11"
-          position=" md:top-1/2  top-1/8 right-4 md:right-6"
-        />
-        <DecorativeStar
-          size="w-3 h-3 md:w-10 md:h-10"
-          position="bottom-20 right-1/3"
-        />
-        <DecorativeStar
-          size="w-5 h-5 md:w-11 md:h-11 "
-          position="top-64 left-10"
-        />
-
-        {/* Header section */}
-        <div className="w-full mx-auto mb-12 md:mb-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-pretty">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto text-balance">
-            Got questions? We've got answers. Check out our frequently asked
-            questions section to find valuable insights into our processes,
-            pricing, and more. Transparency is at the core of our client
-            interactions.
-          </p>
-        </div>
-
-        {/* FAQ Content - Two Column Grid */}
-        <div className="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {faqData.map((item) => (
-            <div key={item.id} className="relative">
-              <button
-                onClick={() => toggleAccordion(item.id)}
-                className="w-full text-left group"
+        <Reveal className="mx-auto max-w-[760px]">
+          {items.map((item, index) => {
+            const id = item.id ?? String(index);
+            const isOpen = expandedId === id;
+            return (
+              <div
+                key={id}
+                className="mb-3.5 rounded-2xl bg-white px-6 shadow-[0_4px_20px_rgba(13,38,28,0.05)] last:mb-0"
               >
-                <div className="flex items-start justify-between gap-4 pb-4">
-                  <h3 className="text-lg font-semibold text-white group-hover:text-[#7AE48A] transition-colors">
-                    {item.question}
-                  </h3>
-                  <div
-                    className={`flex-shrink-0 mt-1 transition-transform duration-300 ${
-                      expandedId === item.id ? "rotate-180" : ""
+                <button
+                  onClick={() => toggleAccordion(id)}
+                  aria-expanded={isOpen}
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-left"
+                >
+                  <h3 className="text-base font-bold text-grey-900">{item.question}</h3>
+                  <span
+                    className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full text-base transition-transform duration-200 ${
+                      isOpen ? "rotate-45 bg-secondary text-white" : "bg-grey-100 text-primary"
                     }`}
                   >
-                    <FiChevronDown
-                      size={24}
-                      color="#7AE48A"
-                      className="opacity-100"
-                    />
-                  </div>
+                    +
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-72 pb-5 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="whitespace-pre-line text-[14.5px] leading-relaxed text-grey-600">
+                    {item.answer}
+                  </p>
                 </div>
-
-                {/* Bottom border for question */}
-                <div className="h-px bg-gradient-to-r from-[#7AE48A]/30 to-transparent"></div>
-              </button>
-
-              {/* Expanded content */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  expandedId === item.id
-                    ? "max-h-96 opacity-100 pt-4"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <p className="text-gray-200 whitespace-pre-line leading-relaxed">
-                  {item.answer}
-                </p>
               </div>
-            </div>
-          ))}
-        </div>
+            );
+          })}
+        </Reveal>
       </div>
-    </div>
+    </section>
   );
 };
