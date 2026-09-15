@@ -6,12 +6,36 @@ import Reveal from "../components/Reveal";
 import { img, links } from "../lib/designImages";
 
 const whoIsItFor = [
-  { src: img.inventoryFridge, alt: "Supermarket staff checking fridge stock", label: "Supermarkets" },
-  { src: img.scanAisle, alt: "Customer shopping with her phone in a store aisle", label: "Restaurants & Cafés" },
-  { src: img.contactlessPay, alt: "Cashier processing a contactless payment", label: "Pharmacies" },
-  { src: img.loyaltyCustomer, alt: "Happy salon customer with shopping bags", label: "Salons & Beauty" },
-  { src: img.delivery, alt: "Convenience store owner preparing a delivery", label: "Convenience Stores" },
-  { src: img.marketVendor, alt: "Open market trader managing her stall with her phone", label: "Open Market Traders" },
+  {
+    src: img.inventoryFridge,
+    alt: "Supermarket staff checking fridge stock",
+    label: "Supermarkets",
+  },
+  {
+    src: img.scanAisle,
+    alt: "Customer shopping with her phone in a store aisle",
+    label: "Restaurants & Cafés",
+  },
+  {
+    src: img.contactlessPay,
+    alt: "Cashier processing a contactless payment",
+    label: "Pharmacies",
+  },
+  {
+    src: img.loyaltyCustomer,
+    alt: "Happy salon customer with shopping bags",
+    label: "Salons & Beauty",
+  },
+  {
+    src: img.delivery,
+    alt: "Convenience store owner preparing a delivery",
+    label: "Convenience Stores",
+  },
+  {
+    src: img.marketVendor,
+    alt: "Open market trader managing her stall with her phone",
+    label: "Open Market Traders",
+  },
 ];
 
 const growthStats = [
@@ -20,7 +44,6 @@ const growthStats = [
   { value: 3, suffix: "x", label: "Higher spend from loyalty members" },
 ];
 
-/** Counts up to `value` once the element scrolls into view. */
 const CountUp = ({ value, suffix }: { value: number; suffix: string }) => {
   const ref = useRef<HTMLElement>(null);
   const [display, setDisplay] = useState(0);
@@ -47,7 +70,7 @@ const CountUp = ({ value, suffix }: { value: number; suffix: string }) => {
         };
         tick();
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     observer.observe(node);
@@ -55,7 +78,10 @@ const CountUp = ({ value, suffix }: { value: number; suffix: string }) => {
   }, [value]);
 
   return (
-    <b ref={ref} className="mb-1.5 block text-4xl font-black text-secondary-dark">
+    <b
+      ref={ref}
+      className="mb-1.5 block text-4xl font-black text-secondary-dark"
+    >
       {display}
       {suffix}
     </b>
@@ -77,7 +103,7 @@ const StreakCard = () => {
         observer.unobserve(node);
         window.setTimeout(() => setFilled(true), 200);
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     observer.observe(node);
@@ -97,7 +123,8 @@ const StreakCard = () => {
   const dayClasses: Record<string, string> = {
     done: "border-solid border-secondary bg-secondary-light text-secondary-dark",
     pending: "border-dashed border-grey-300 text-grey-600",
-    reward: "border-solid border-warning bg-warning-light text-warning text-[17px]",
+    reward:
+      "border-solid border-warning bg-warning-light text-warning text-[17px]",
   };
 
   return (
@@ -107,7 +134,9 @@ const StreakCard = () => {
     >
       <div className="mb-6 flex items-center justify-between">
         <b className="text-[15px]">Mrs. Adeyemi's streak</b>
-        <span className="text-[13px] font-bold text-grey-600">7-day stamp card</span>
+        <span className="text-[13px] font-bold text-grey-600">
+          7-day stamp card
+        </span>
       </div>
       <div className="mb-6 flex gap-2.5">
         {days.map((day, i) => (
@@ -149,7 +178,10 @@ const Loyalty = () => {
           </Link>
           <ul className="hidden items-center gap-7 text-sm font-bold text-grey-600 md:flex">
             <li>
-              <a href="#for-business" className="transition-colors hover:text-primary">
+              <a
+                href="#for-business"
+                className="transition-colors hover:text-primary"
+              >
                 For Business
               </a>
             </li>
@@ -166,7 +198,9 @@ const Loyalty = () => {
           </ul>
           <button
             type="button"
-            onClick={() => window.open(links.signup, "_blank", "noopener,noreferrer")}
+            onClick={() =>
+              window.open(links.signup, "_blank", "noopener,noreferrer")
+            }
             className="cursor-pointer rounded-full bg-secondary px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-0.5 hover:bg-secondary-dark md:px-6 md:py-3"
           >
             Use for Free
@@ -188,14 +222,16 @@ const Loyalty = () => {
               <span className="text-secondary-dark">Grow your business.</span>
             </h1>
             <p className="mb-7 max-w-md text-[17px] text-grey-600">
-              Sync360 Loyalty makes it effortless for customers to earn rewards, and
-              effortless for you to bring them back more often — no app for them to
-              download, no extra system for you to run.
+              Sync360 Loyalty makes it effortless for customers to earn rewards,
+              and effortless for you to bring them back more often — no app for
+              them to download, no extra system for you to run.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <button
                 type="button"
-                onClick={() => window.open(links.signup, "_blank", "noopener,noreferrer")}
+                onClick={() =>
+                  window.open(links.signup, "_blank", "noopener,noreferrer")
+                }
                 className="cursor-pointer rounded-full bg-secondary px-8 py-3.5 font-extrabold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-1 hover:bg-secondary-dark"
               >
                 Use for Free
@@ -230,11 +266,13 @@ const Loyalty = () => {
                 <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 What customers see
               </span>
-              <h2 className="my-4 text-[28px]">A streak worth coming back for.</h2>
+              <h2 className="my-4 text-[28px]">
+                A streak worth coming back for.
+              </h2>
               <p className="text-grey-600">
-                Every visit fills in another day. Customers can see exactly how close they
-                are to their reward — and that visible progress is what brings them back
-                the next time, and the time after.
+                Every visit fills in another day. Customers can see exactly how
+                close they are to their reward — and that visible progress is
+                what brings them back the next time, and the time after.
               </p>
             </div>
             <StreakCard />
@@ -259,8 +297,9 @@ const Loyalty = () => {
                 No app for your customers to download.
               </h2>
               <p className="mb-4 text-grey-600">
-                They scan your QR code once, get their own code back, and show it at the
-                counter every visit after. You scan, the stamp is added — done in seconds.
+                They scan your QR code once, get their own code back, and show
+                it at the counter every visit after. You scan, the stamp is
+                added — done in seconds.
               </p>
               <ul className="space-y-3">
                 {[
@@ -290,23 +329,24 @@ const Loyalty = () => {
             <div className="order-1 md:order-2">
               <h2 className="mb-4 text-[28px]">Free to start. No catch.</h2>
               <p className="mb-4 text-grey-600">
-                Run your own reward programme at no cost, with no contract holding you to
-                it.
+                Run your own reward programme at no cost, with no contract
+                holding you to it.
               </p>
               <ul className="space-y-3">
-                {["Unlimited members, no hidden fees", "Cancel whenever you want"].map(
-                  (point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-2.5 text-[15px] font-semibold text-grey-900"
-                    >
-                      <span className="mt-0.5 flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-[7px] bg-white text-xs font-black text-secondary-dark">
-                        ✓
-                      </span>
-                      {point}
-                    </li>
-                  )
-                )}
+                {[
+                  "Unlimited members, no hidden fees",
+                  "Cancel whenever you want",
+                ].map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-start gap-2.5 text-[15px] font-semibold text-grey-900"
+                  >
+                    <span className="mt-0.5 flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-[7px] bg-white text-xs font-black text-secondary-dark">
+                      ✓
+                    </span>
+                    {point}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="order-2 aspect-[4/3.2] overflow-hidden rounded-[20px] md:order-1">
@@ -328,8 +368,8 @@ const Loyalty = () => {
               Loyalty isn't just nice for customers. It's growth for you.
             </h2>
             <p className="mt-3 text-grey-600">
-              Every streak a customer builds is a reason to come back — and repeat
-              customers spend more, more often.
+              Every streak a customer builds is a reason to come back — and
+              repeat customers spend more, more often.
             </p>
           </Reveal>
 
@@ -344,7 +384,8 @@ const Loyalty = () => {
             ))}
           </Reveal>
           <p className="mt-8 text-center text-[13px] text-grey-600">
-            Figures are typical loyalty-programme benchmarks, not Sync360 measurements.
+            Figures are typical loyalty-programme benchmarks, not Sync360
+            measurements.
           </p>
         </div>
       </section>
@@ -359,8 +400,8 @@ const Loyalty = () => {
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl">Who is it for?</h2>
             <p className="mt-3 text-grey-600">
-              For anywhere that depends on returning customers — any business that wants
-              to run a "buy X, get Y" campaign.
+              For anywhere that depends on returning customers — any business
+              that wants to run a "buy X, get Y" campaign.
             </p>
           </Reveal>
 
@@ -392,7 +433,7 @@ const Loyalty = () => {
           {
             question: "What is Sync360 Loyalty?",
             answer:
-              "Sync360 Loyalty is the digital version of classic paper stamp cards. It brings any business's simple \"buy X, get Y\" loyalty programme to the phone.",
+              'Sync360 Loyalty is the digital version of classic paper stamp cards. It brings any business\'s simple "buy X, get Y" loyalty programme to the phone.',
           },
           {
             question: "How does the loyalty app work?",
@@ -432,7 +473,8 @@ const Loyalty = () => {
                 Try it for free.
               </h2>
               <p className="relative mx-auto mb-7 max-w-md text-white/85">
-                Create your loyalty card and start growing repeat sales right away.
+                Create your loyalty card and start growing repeat sales right
+                away.
               </p>
               <div className="relative flex flex-col justify-center gap-4 sm:flex-row">
                 <button
@@ -482,12 +524,18 @@ const Loyalty = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="#for-business" className="transition-colors hover:text-white">
+                    <a
+                      href="#for-business"
+                      className="transition-colors hover:text-white"
+                    >
                       For Businesses
                     </a>
                   </li>
                   <li>
-                    <a href="#faq" className="transition-colors hover:text-white">
+                    <a
+                      href="#faq"
+                      className="transition-colors hover:text-white"
+                    >
                       FAQ
                     </a>
                   </li>
@@ -510,7 +558,10 @@ const Loyalty = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/#contact" className="transition-colors hover:text-white">
+                    <Link
+                      to="/#contact"
+                      className="transition-colors hover:text-white"
+                    >
                       Contact
                     </Link>
                   </li>
@@ -534,8 +585,12 @@ const Loyalty = () => {
             </div>
           </div>
           <div className="flex flex-col items-center gap-2.5 border-t border-white/10 pt-5 text-xs md:flex-row md:justify-between">
-            <span>© {new Date().getFullYear()} Sync360. All rights reserved.</span>
-            <span>Offer your customers a rewards programme and grow your sales.</span>
+            <span>
+              © {new Date().getFullYear()} Sync360. All rights reserved.
+            </span>
+            <span>
+              Offer your customers a rewards programme and grow your sales.
+            </span>
           </div>
         </div>
       </footer>
