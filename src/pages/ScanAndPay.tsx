@@ -1,9 +1,9 @@
 import CaseStudy from "../components/CaseStudy";
 import Footer from "../components/Footer";
 import ImageSlider from "../components/ImageSlider";
-import TrustedBy from "../components/TrustedBy";
 import Reveal from "../components/Reveal";
 import SubPageNav from "../components/SubPageNav";
+import TrustedBy from "../components/TrustedBy";
 import { img, links } from "../lib/designImages";
 
 const walkthrough = [
@@ -29,13 +29,16 @@ const walkthrough = [
   },
   {
     src: img.scanPickAndGo,
-    alt: "Step 5: you're done — walk out and enjoy your day",
+    alt: "Step 5: you're done. Walk out and enjoy your day",
     caption: "5 · Pick and go",
   },
 ];
 
 const shopperSlides = [
-  { src: img.scanAisle, alt: "Shopper scanning a shelf item in a supermarket aisle" },
+  {
+    src: img.scanAisle,
+    alt: "Shopper scanning a shelf item in a supermarket aisle",
+  },
   { src: img.scanJuice, alt: "Shopper scanning a juice carton with her phone" },
   { src: img.scanJar, alt: "Shopper scanning a jar product with her phone" },
 ];
@@ -68,9 +71,9 @@ const whyDeploy = [
   },
   {
     src: img.delivery,
-    alt: "No extra hardware required — just a phone",
-    heading: "No wasted retail space, no additional capex.",
-    body: "No extra hardware required — scale cost-effectively across every branch with a single integration.",
+    alt: "No extra hardware required  just a phone",
+    heading: "No wasted retail space, no additional gadget.",
+    body: "No extra hardware required scale cost-effectively across every branch with a single integration.",
   },
   {
     src: img.scanAtTill,
@@ -89,7 +92,7 @@ const whyDeploy = [
     points: [
       "Rapid deployment with plug-and-play integrations",
       "Fully customisable to suit your brand and workflows",
-      "Minimal training required — an intuitive interface for store staff",
+      "Minimal training required, with an intuitive interface for store staff",
     ],
   },
 ];
@@ -97,7 +100,7 @@ const whyDeploy = [
 const features = [
   {
     title: "No App Download Friction",
-    body: "A WebApp experience lets customers start shopping by scanning a QR code — no barriers to adoption.",
+    body: "A WebApp experience lets customers start shopping by scanning a QR code  no barriers to adoption.",
   },
   {
     title: "Works Everywhere, Always",
@@ -105,15 +108,15 @@ const features = [
   },
   {
     title: "Universal Payment Acceptance",
-    body: "Card, bank transfer, USSD, cash at the till and BNPL — we handle it all.",
+    body: "Card, bank transfer, USSD, cash at the till and BNPL  we handle it all.",
   },
   {
     title: "One-Tap Checkout",
-    body: "Customers scan, tap and go — cutting the time they spend queuing at checkout.",
+    body: "Customers scan, tap and go  cutting the time they spend queuing at checkout.",
   },
   {
     title: "Cashier Code Checkout",
-    body: "Generate a code and show it to the cashier to pay at the till — no app, no queue.",
+    body: "Generate a code and show it to the cashier to pay at the till no app, no queue.",
   },
   {
     title: "Buy Now, Pay Later Built In",
@@ -136,7 +139,7 @@ const applications = [
   },
   {
     title: "Pop-Up Stores",
-    body: "Perfect for temporary retail — mobile self-checkout needs no extra hardware investment, customers simply scan and pay using any smartphone browser.",
+    body: "Perfect for temporary retail. Mobile self-checkout needs no extra hardware investment, customers simply scan and pay using any smartphone browser.",
   },
   {
     title: "Speciality Retail",
@@ -146,49 +149,87 @@ const applications = [
 
 const StoreBadges = () => (
   <div className="flex flex-wrap justify-center gap-3.5">
+    {/* Google Play */}
     <a
       href={links.signup}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(13,38,28,0.25)] transition-transform hover:-translate-y-0.5"
+      className="flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(13,38,28,0.12)] transition-transform hover:-translate-y-0.5"
     >
       <svg className="h-[26px] w-[26px] shrink-0" viewBox="0 0 24 24">
-        <path d="M4 3.5c-.4.4-.6.9-.6 1.5v14c0 .6.2 1.1.6 1.5l.1.1L12 12.5 4.1 3.4 4 3.5z" fill="#00D2FF" />
-        <path d="M14.9 15.4 12 12.5l2.9-2.9 3.5 2c.6.3.6 1 0 1.3l-3.5 2.5z" fill="#FFC400" />
+        <path
+          d="M4 3.5c-.4.4-.6.9-.6 1.5v14c0 .6.2 1.1.6 1.5l.1.1L12 12.5 4.1 3.4 4 3.5z"
+          fill="#00D2FF"
+        />
+        <path
+          d="M14.9 15.4 12 12.5l2.9-2.9 3.5 2c.6.3.6 1 0 1.3l-3.5 2.5z"
+          fill="#FFC400"
+        />
         <path d="M4.1 3.4 14.9 9.6 12 12.5 4.1 3.4z" fill="#00F26B" />
-        <path d="M4.1 21.6 12 12.5l2.9 2.9-10 6.4c-.3.1-.6 0-.8-.2z" fill="#FF3A44" />
+        <path
+          d="M4.1 21.6 12 12.5l2.9 2.9-10 6.4c-.3.1-.6 0-.8-.2z"
+          fill="#FF3A44"
+        />
       </svg>
       <span className="flex flex-col leading-tight">
-        <small className="text-[9.5px] font-semibold text-[rgba(255,255,255,0.75)]">GET IT ON</small>
-        <strong className="text-[15px] font-extrabold text-[#ffffff]">Google Play</strong>
+        <small className="text-[9.5px] font-semibold text-black">
+          GET IT ON
+        </small>
+        <strong className="text-[15px] font-extrabold text-black">
+          Google Play
+        </strong>
       </span>
     </a>
+
+    {/* App Store */}
     <a
       href={links.signup}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(13,38,28,0.25)] transition-transform hover:-translate-y-0.5"
+      className="flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(13,38,28,0.12)] transition-transform hover:-translate-y-0.5"
     >
-      <svg className="h-[26px] w-[26px] shrink-0" viewBox="0 0 24 24" fill="#fff">
-        <path d="M16.5 1.5c.1 1-.3 2-.9 2.8-.6.8-1.6 1.4-2.6 1.3-.1-1 .4-2 .9-2.7.6-.8 1.7-1.4 2.6-1.4zM20 17.2c-.3.8-.7 1.5-1.2 2.2-.7 1-1.4 2-2.5 2-1.1 0-1.4-.6-2.6-.6-1.3 0-1.6.6-2.6.6-1.1 0-1.9-1.1-2.6-2.1-1.5-2.1-2.6-6-1.1-8.6.7-1.3 2-2.1 3.4-2.1 1.1 0 2.1.7 2.6.7.5 0 1.8-.9 3.1-.8.5 0 2 .2 3 1.5-.1.1-1.8 1-1.8 3 0 2.4 2.1 3.2 2.3 3.2z" />
+      <svg
+        className="h-[26px] w-[26px] shrink-0"
+        viewBox="0 0 24 24"
+        fill="#000000"
+      >
+        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
       </svg>
       <span className="flex flex-col leading-tight">
-        <small className="text-[9.5px] font-semibold text-[rgba(255,255,255,0.75)]">Download on the</small>
-        <strong className="text-[15px] font-extrabold text-[#ffffff]">App Store</strong>
+        <small className="text-[9.5px] font-semibold text-black">
+          Download on the
+        </small>
+        <strong className="text-[15px] font-extrabold text-black">
+          App Store
+        </strong>
       </span>
     </a>
+
+    {/* Web App: green background keeps white text, or make it black text on white too */}
     <a
       href={links.signup}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#3D9950] py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(61,153,80,0.3)] transition-transform hover:-translate-y-0.5"
+      className="flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(13,38,28,0.12)] transition-transform hover:-translate-y-0.5"
     >
-      <svg className="h-[26px] w-[26px] shrink-0" viewBox="0 0 24 24" fill="#fff">
-        <path d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.2 6.5 3.6L12 11.4 5.5 7.8 12 4.2zM5 9.5l6 3.4v6.9l-6-3.3V9.5zm8 10.3v-6.9l6-3.4v6.6l-6 3.7z" />
+      <svg
+        className="h-[26px] w-[26px] shrink-0"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#000000"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
       <span className="flex flex-col leading-tight">
-        <small className="text-[9.5px] font-semibold text-[rgba(255,255,255,0.75)]">Or use</small>
-        <strong className="text-[15px] font-extrabold text-[#ffffff]">Web App</strong>
+        <small className="text-[9.5px] font-semibold text-black">Or use</small>
+        <strong className="text-[15px] font-extrabold text-black">
+          Web App
+        </strong>
       </span>
     </a>
   </div>
@@ -197,9 +238,9 @@ const StoreBadges = () => (
 const ScanAndPay = () => {
   return (
     <div className="bg-cream">
-      <SubPageNav announcement="Scan & Checkout is live — customers skip the till entirely." />
+      <SubPageNav announcement="Scan & Checkout is live. Customers skip the till entirely." />
 
-      {/* Hero — light-green accent theme */}
+      {/* Hero: light-green accent theme */}
       <section
         className="relative overflow-hidden pt-12 md:pt-16"
         style={{
@@ -211,13 +252,15 @@ const ScanAndPay = () => {
         <div
           className="animate-blob-float absolute -right-[6%] -top-24 h-[280px] w-[280px] rounded-full opacity-50 blur-sm md:h-[340px] md:w-[340px]"
           style={{
-            background: "radial-gradient(circle, rgba(82,182,97,.55), transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(82,182,97,.55), transparent 70%)",
           }}
         />
         <div
           className="animate-blob-float absolute -bottom-16 left-[2%] h-[200px] w-[200px] rounded-full opacity-50 blur-sm md:h-[260px] md:w-[260px]"
           style={{
-            background: "radial-gradient(circle, rgba(196,230,180,.45), transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(196,230,180,.45), transparent 70%)",
             animationDelay: "2.4s",
           }}
         />
@@ -232,14 +275,17 @@ const ScanAndPay = () => {
               The Future of In-Store Shopping.
             </h1>
             <p className="mx-auto mt-5 max-w-lg text-base text-white/70 md:mx-0 md:text-lg">
-              Sync360 Scan &amp; Pay combines real-time ePricing, mobile checkout, and
-              intelligent inventory into one seamless shopping experience — helping
-              retailers serve customers faster while keeping every price synchronized.
+              Sync360 Scan &amp; Pay combines real-time ePricing, mobile
+              checkout, and intelligent inventory into one seamless shopping
+              experience helping retailers serve customers faster while keeping
+              every price synchronized.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
               <button
                 type="button"
-                onClick={() => window.open(links.whatsapp, "_blank", "noopener,noreferrer")}
+                onClick={() =>
+                  window.open(links.whatsapp, "_blank", "noopener,noreferrer")
+                }
                 className="cursor-pointer rounded-full bg-secondary px-8 py-3.5 text-base font-extrabold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-1 hover:bg-secondary-dark"
               >
                 Schedule a Demo
@@ -257,8 +303,8 @@ const ScanAndPay = () => {
                 />
               </div>
               <p className="mt-3.5 text-center text-[12.5px] font-bold text-white/45">
-                The actual Sync360 Scan &amp; Pay screen — priced in Naira, built for
-                Nigerian shelves.
+                The actual Sync360 Scan &amp; Pay screen, priced in Naira, built
+                for Nigerian shelves.
               </p>
             </div>
           </Reveal>
@@ -270,7 +316,7 @@ const ScanAndPay = () => {
         heading="Trusted by growing stores across Nigeria"
       />
 
-      {/* See it in action — photo gallery */}
+      {/* See it in action: photo gallery */}
       <section className="py-16 md:py-24 md:pb-10">
         <div className="mx-auto max-w-[1200px] px-6 md:px-12">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center">
@@ -282,8 +328,8 @@ const ScanAndPay = () => {
               This is what ease of use looks like.
             </h2>
             <p className="mt-3 text-grey-600">
-              Real shoppers, real shelves, real checkout — no queues, no confusion, no
-              awkward price disputes.
+              Real shoppers, real shelves, real checkout. No queues, no
+              confusion, no awkward price disputes.
             </p>
           </Reveal>
 
@@ -292,7 +338,9 @@ const ScanAndPay = () => {
               <div
                 key={item.src}
                 className={`group relative h-[200px] overflow-hidden rounded-[20px] md:h-auto ${
-                  item.big ? "md:row-span-2 md:min-h-[456px]" : "md:min-h-[220px]"
+                  item.big
+                    ? "md:row-span-2 md:min-h-[456px]"
+                    : "md:min-h-[220px]"
                 }`}
               >
                 <img
@@ -319,10 +367,12 @@ const ScanAndPay = () => {
               <span className="h-1.5 w-1.5 rounded-full bg-current" />
               How it works
             </span>
-            <h2 className="mt-3 text-3xl md:text-4xl">Five steps, start to finish.</h2>
+            <h2 className="mt-3 text-3xl md:text-4xl">
+              Five steps, start to finish.
+            </h2>
             <p className="mt-3 text-grey-600">
-              The actual Sync360 Scan &amp; Pay flow — from picking a product to walking
-              out the door.
+              The actual Sync360 Scan &amp; Pay flow from picking a product to
+              walking out the door.
             </p>
           </Reveal>
 
@@ -355,28 +405,53 @@ const ScanAndPay = () => {
               </div>
               <div className="w-full lg:w-1/2">
                 <h3 className="mb-3 text-[22px] font-extrabold">
-                  Shop Anywhere. Checkout in Seconds.
+                  Shop. Scan. Checkout.
                 </h3>
+                <p className="mb-3 font-bold text-grey-900">
+                  A faster way for customers to shop and pay without waiting in
+                  line.
+                </p>
                 <p className="mb-5 text-grey-600">
-                  Give customers a seamless shopping experience across iOS, Android, and
-                  the web. No app installation required, one-tap checkout, and reliable
-                  performance even in low-data environments.
+                  Give customers a seamless self-checkout experience directly
+                  from their phone. No app download. No complicated setup. Just
+                  scan, shop, and pay.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "iOS & Android native app",
-                    "WebApp — no install required",
-                    "One-tap checkout",
-                    "Low-data / offline mode",
+                    {
+                      title: "Web-based self-checkout",
+                      desc: "works directly in the browser",
+                    },
+                    {
+                      title: "No app installation required",
+                      desc: "customers can start instantly",
+                    },
+                    {
+                      title: "Scan & checkout",
+                      desc: "scan products, review your cart, and pay",
+                    },
+                    {
+                      title: "Fast, simple experience",
+                      desc: "reduce queues and checkout time",
+                    },
+                    {
+                      title: "Built for low-data environments",
+                      desc: "designed for reliable everyday use",
+                    },
                   ].map((point) => (
                     <li
-                      key={point}
+                      key={point.title}
                       className="flex items-start gap-3 text-[15px] font-semibold text-grey-900"
                     >
                       <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-secondary-light text-[13px] font-black text-secondary-dark">
                         ✓
                       </span>
-                      {point}
+                      <span>
+                        {point.title}:{" "}
+                        <span className="font-normal text-grey-600">
+                          {point.desc}
+                        </span>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -397,7 +472,9 @@ const ScanAndPay = () => {
                 </div>
               </div>
               <div className="w-full lg:w-1/2">
-                <h3 className="mb-3.5 text-[22px] font-extrabold">All-Rounder App</h3>
+                <h3 className="mb-3.5 text-[22px] font-extrabold">
+                  All-Rounder App
+                </h3>
                 <ul className="space-y-3">
                   {[
                     "Real-time inventory visibility",
@@ -421,16 +498,26 @@ const ScanAndPay = () => {
           </Reveal>
 
           <Reveal className="mx-auto mt-12 max-w-[760px] space-y-4 text-center text-[15.5px] text-grey-600">
-            <p>
-              Embed Sync360's Scan &amp; Pay e-Pricing technology directly into your store
-              operations to empower shoppers with seamless self-checkout. Transform your
-              customers' shopping experience with detailed product information and
-              eco-friendly digital receipts.
+            <p className="text-lg font-extrabold text-grey-900">
+              Self-Checkout. Smarter Shopping. Better Insights.
             </p>
             <p>
-              Gain dashboards that reveal shopper behaviour, dwell times, basket
-              composition and scanning patterns — enabling data-driven optimisation of
-              layout, promotions and staffing.
+              Sync360 Scan &amp; Pay lets customers scan, shop, and pay directly
+              from their phones. No app download, no waiting in line.
+            </p>
+            <p>
+              Give shoppers instant access to product information, a digital
+              basket, seamless payment, and digital receipts, while your
+              business gets the data needed to understand how customers actually
+              shop.
+            </p>
+            <p>
+              Track basket behaviour, dwell time, product scans, and shopping
+              patterns to make smarter decisions about your store layout,
+              promotions, product placement, and staffing.
+            </p>
+            <p className="font-bold text-grey-900">
+              Less waiting for customers. More visibility for your business.
             </p>
           </Reveal>
         </div>
@@ -499,7 +586,9 @@ const ScanAndPay = () => {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1200px] px-6 md:px-12">
           <Reveal className="mx-auto mb-14 max-w-2xl text-center">
-            <h2 className="text-3xl md:text-4xl">Features of Scan &amp; Pay e-Pricing</h2>
+            <h2 className="text-3xl md:text-4xl">
+              Features of Scan &amp; Pay e-Pricing
+            </h2>
           </Reveal>
           <Reveal className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {features.map((feature) => (
@@ -527,8 +616,8 @@ const ScanAndPay = () => {
               Powering retail innovation across industries.
             </h2>
             <p className="mt-3 text-grey-600">
-              Experience how Sync360 is changing the checkout process — speed, simplicity
-              and real results.
+              Experience how Sync360 is changing the checkout process with
+              speed, simplicity and real results.
             </p>
           </Reveal>
 
@@ -536,8 +625,12 @@ const ScanAndPay = () => {
             {applications.map((application) => (
               <Reveal key={application.title}>
                 <div className="rounded-2xl bg-white px-7 py-5">
-                  <h3 className="text-base font-extrabold">{application.title}</h3>
-                  <p className="mt-2 text-[14.5px] text-grey-600">{application.body}</p>
+                  <h3 className="text-base font-extrabold">
+                    {application.title}
+                  </h3>
+                  <p className="mt-2 text-[14.5px] text-grey-600">
+                    {application.body}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -555,15 +648,20 @@ const ScanAndPay = () => {
                 Ready to transform your checkout experience?
               </h2>
               <p className="relative mx-auto mt-3 max-w-md text-white/65">
-                Join the stores already using Sync360 to move customers through faster.
+                Join the stores already using Sync360 to move customers through
+                faster.
               </p>
-              <button
-                type="button"
-                onClick={() => window.open(links.whatsapp, "_blank", "noopener,noreferrer")}
-                className="relative mt-6 cursor-pointer rounded-full bg-secondary px-8 py-3.5 font-extrabold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-1 hover:bg-secondary-dark"
-              >
-                Schedule a Demo
-              </button>
+              <div className="mt-6 w-full">
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.open(links.whatsapp, "_blank", "noopener,noreferrer")
+                  }
+                  className="relative mt-6 cursor-pointer rounded-full bg-secondary px-8 py-3.5 font-extrabold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-1 hover:bg-secondary-dark"
+                >
+                  Schedule a Demo
+                </button>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -571,11 +669,11 @@ const ScanAndPay = () => {
 
       {/* Customer success story */}
       <CaseStudy
-        heading="Trufoods Supermarket achieves 100% self-checkout adoption across 3 Lagos stores with Sync360."
+        heading="Bankem Supermarket achieves 100% self-checkout adoption across 3 Lagos stores with Sync360."
         columns={[
           {
             label: "Problem",
-            body: "Trufoods customers experienced long checkout queues and wanted a faster way to shop during peak hours.",
+            body: "Bankem customers experienced long checkout queues and wanted a faster way to shop during peak hours.",
           },
           {
             label: "Solution",
@@ -586,7 +684,6 @@ const ScanAndPay = () => {
             body: "Achieved near-100% self-checkout adoption, eliminated weekend queues, and expanded the solution across all branches.",
           },
         ]}
-        note="Illustrative example — swap in a real customer story here."
         sectionBg="bg-cream"
       />
 
@@ -595,12 +692,12 @@ const ScanAndPay = () => {
         <div className="mx-auto max-w-[900px] px-6 text-center md:px-12">
           <Reveal>
             <p className="text-grey-600">
-              Sync360 is transforming the retail shopping experience with a suite of
-              checkout solutions that empower shoppers to shop in-store with speed and
-              convenience, eliminating the friction of traditional checkout. Retailers can
-              choose Scan &amp; Pay, mPOS, or the standard till to offer different checkout
-              journeys — deployed seamlessly across supermarkets, fashion, pharmacy and
-              more.
+              Sync360 is transforming the retail shopping experience with a
+              suite of checkout solutions that empower shoppers to shop in-store
+              with speed and convenience, eliminating the friction of
+              traditional checkout. Retailers can choose Scan &amp; Pay or the
+              standard till to offer different checkout journeys, deployed
+              seamlessly across supermarkets, fashion, pharmacy and more.
             </p>
           </Reveal>
           {/* Kept outside <Reveal> so the download links never depend on the fade-in. */}

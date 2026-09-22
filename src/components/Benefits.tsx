@@ -43,7 +43,7 @@ const Benefits = () => {
                 <ul className="space-y-4">
                   {[
                     "Save hours every week on manual stock counts and reconciliation.",
-                    "Get a clear, daily picture of profit — without touching a spreadsheet.",
+                    "Get a clear, daily picture of profit, without touching a spreadsheet.",
                     "Settle payments straight into a dedicated business account.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm font-semibold text-grey-900">

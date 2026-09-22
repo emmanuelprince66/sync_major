@@ -142,7 +142,7 @@ const Content = () => {
           </p>
         </Reveal>
 
-        {/* Extra breathing room between rows — not in the design file, added on request. */}
+        {/* Extra breathing room between rows. Not in the design file, added on request. */}
         <div className="space-y-20 md:space-y-32">
           {contentItems.map((item, index) => (
             <Reveal key={item.heading}>

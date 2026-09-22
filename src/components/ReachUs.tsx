@@ -11,12 +11,16 @@ const ReachUs = () => {
           <div className="grid-pattern" />
           <div
             className="animate-blob-float absolute -bottom-32 -left-20 h-[300px] w-[300px] rounded-full"
-            style={{ background: "radial-gradient(circle, rgba(82,182,97,.3), transparent 70%)" }}
+            style={{
+              background:
+                "radial-gradient(circle, rgba(82,182,97,.3), transparent 70%)",
+            }}
           />
           <div
             className="animate-blob-float absolute -right-16 -top-28 h-[220px] w-[220px] rounded-full"
             style={{
-              background: "radial-gradient(circle, rgba(30,94,255,.25), transparent 70%)",
+              background:
+                "radial-gradient(circle, rgba(30,94,255,.25), transparent 70%)",
               animationDirection: "reverse",
             }}
           />
@@ -27,27 +31,59 @@ const ReachUs = () => {
                 Your business, synced for total growth.
               </h2>
               <p className="mx-auto mt-3.5 mb-7 max-w-md text-white/65 md:mx-0">
-                Download the Sync360 app to manage inventory, payments,
-                delivery and loyalty — right from your pocket.
+                Download the Sync360 app to manage inventory, payments, delivery
+                and loyalty right from your pocket.
               </p>
+              <p className="mx-auto mt-3.5 mb-7 max-w-md text-white/65 md:mx-0"></p>
               <div className="flex flex-wrap justify-center gap-3.5 md:justify-start">
+                <a
+                  href="https://business.sync360.africa"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative z-10 flex items-center gap-2.5 rounded-xl border border-white bg-white px-4 py-2.5 text-[#073b2a] opacity-100 shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-white"
+                >
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#073b2a]/10 text-[#073b2a]">
+                    <svg
+                      aria-hidden="true"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="white"
+                      strokeWidth="2"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M3 12h18M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9c-2.2-2.4-3.3-5.4-3.3-9S9.8 5.4 12 3Z" />
+                    </svg>
+                  </span>
+                  <span className="flex flex-col items-start leading-tight">
+                    <small className="text-[9.5px] font-semibold text-[#ffff]">
+                      VISIT US ONLINE
+                    </small>
+                  </span>
+                </a>
                 <button
                   type="button"
                   onClick={() =>
                     window.open(
                       "https://play.google.com/store/apps/details?id=com.sync.sink",
                       "_blank",
-                      "noopener,noreferrer"
+                      "noopener,noreferrer",
                     )
                   }
                   className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5"
                 >
-                  <img src={play} alt="Google Play" className="h-6 w-6 object-contain" />
+                  <img
+                    src={play}
+                    alt="Google Play"
+                    className="h-6 w-6 object-contain"
+                  />
                   <span className="flex flex-col items-start leading-tight">
                     <small className="text-[9.5px] font-semibold text-white/75">
                       GET IT ON
                     </small>
-                    <strong className="text-sm font-extrabold text-white">Google Play</strong>
+                    <strong className="text-sm font-extrabold text-white">
+                      Google Play
+                    </strong>
                   </span>
                 </button>
                 <button
@@ -56,17 +92,23 @@ const ReachUs = () => {
                     window.open(
                       "https://apps.apple.com/us/app/Sync360/id6514304272",
                       "_blank",
-                      "noopener,noreferrer"
+                      "noopener,noreferrer",
                     )
                   }
                   className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5"
                 >
-                  <img src={apple} alt="Apple App Store" className="h-6 w-6 object-contain" />
+                  <img
+                    src={apple}
+                    alt="Apple App Store"
+                    className="h-6 w-6 object-contain"
+                  />
                   <span className="flex flex-col items-start leading-tight">
                     <small className="text-[9.5px] font-semibold text-white/75">
                       Download on the
                     </small>
-                    <strong className="text-sm font-extrabold text-white">App Store</strong>
+                    <strong className="text-sm font-extrabold text-white">
+                      App Store
+                    </strong>
                   </span>
                 </button>
               </div>

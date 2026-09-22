@@ -18,7 +18,7 @@ interface ImageSliderProps {
 }
 
 /**
- * Cross-fading image slider with dot navigation — the `.fslider` pattern from
+ * Cross-fading image slider with dot navigation, the `.fslider` pattern from
  * the design files. Auto-advance pauses while a viewer is interacting.
  */
 const ImageSlider = ({

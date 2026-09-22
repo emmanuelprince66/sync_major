@@ -5,14 +5,14 @@ import baseThree from "../assets/base3.png";
 import baseFour from "../assets/base4.png";
 import syn from "../assets/sync.svg";
 import { img, links } from "../lib/designImages";
-import TrustedBy from "./TrustedBy";
 import Reveal from "./Reveal";
+import TrustedBy from "./TrustedBy";
 
 const stats = [
   { icon: baseOne, label: "Sales Powered", value: "1.2B+", tone: "info" },
   { icon: baseTwo, label: "Active Businesses", value: "100+", tone: "warning" },
   { icon: baseThree, label: "Total Sales", value: "₦42,000+", tone: "success" },
-  { icon: baseFour, label: "Reliable", value: "99.9%", tone: "error" },
+  { icon: baseFour, label: "Reliable", value: "99.9%", tone: "success" },
 ] as const;
 
 const toneClasses: Record<string, string> = {
@@ -33,7 +33,7 @@ const Header = () => {
     <div className="bg-cream">
       {/* Announcement bar */}
       <div className="bg-secondary-dark px-4 py-2.5 text-center text-[13.5px] font-bold text-white">
-        Scan &amp; Pay is live — your customers can skip the till entirely.
+        Scan &amp; Pay is live. Your customers can skip the till entirely.
         <Link
           to="/scan-and-pay"
           className="ml-2 whitespace-nowrap underline transition-colors hover:text-primary"
@@ -94,11 +94,7 @@ const Header = () => {
             <button
               type="button"
               onClick={() =>
-                window.open(
-                  links.login,
-                  "_blank",
-                  "noopener,noreferrer"
-                )
+                window.open(links.login, "_blank", "noopener,noreferrer")
               }
               className="hidden cursor-pointer text-sm font-bold text-secondary-dark hover:opacity-70 transition-opacity md:block"
             >
@@ -107,11 +103,7 @@ const Header = () => {
             <button
               type="button"
               onClick={() =>
-                window.open(
-                  links.signup,
-                  "_blank",
-                  "noopener,noreferrer"
-                )
+                window.open(links.signup, "_blank", "noopener,noreferrer")
               }
               className="cursor-pointer rounded-full bg-secondary px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-0.5 hover:bg-secondary-dark md:px-6 md:py-3"
             >
@@ -173,20 +165,16 @@ const Header = () => {
             </h1>
 
             <p className="mx-auto mt-5 max-w-lg text-base text-white/70 md:mx-0 md:text-lg">
-              Every transaction. Every customer. Every decision. Connected in one
-              platform that helps you operate smarter, understand your business,
-              and grow with confidence.
+              Every transaction. Every customer. Every decision. Connected in
+              one platform that helps you operate smarter, understand your
+              business, and grow with confidence.
             </p>
 
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
               <button
                 type="button"
                 onClick={() =>
-                  window.open(
-                    links.signup,
-                    "_blank",
-                    "noopener,noreferrer"
-                  )
+                  window.open(links.signup, "_blank", "noopener,noreferrer")
                 }
                 className="cursor-pointer rounded-full bg-secondary px-8 py-3.5 text-center text-base font-extrabold text-white shadow-[0_10px_24px_rgba(82,182,97,0.35)] transition-transform hover:-translate-y-1 hover:bg-secondary-dark"
               >
@@ -195,11 +183,7 @@ const Header = () => {
               <button
                 type="button"
                 onClick={() =>
-                  window.open(
-                    links.whatsapp,
-                    "_blank",
-                    "noopener,noreferrer"
-                  )
+                  window.open(links.whatsapp, "_blank", "noopener,noreferrer")
                 }
                 className="cursor-pointer rounded-full border-[1.5px] border-white/40 bg-white/5 px-8 py-3.5 text-center text-base font-extrabold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
               >

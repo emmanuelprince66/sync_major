@@ -7,9 +7,9 @@ interface SpotlightBandProps {
   heading: string;
   body: string;
   ctaText?: string;
-  /** External URL — opens in a new tab. */
+  /** External URL, opens in a new tab. */
   ctaLink?: string;
-  /** Internal route — takes precedence over ctaLink. */
+  /** Internal route, takes precedence over ctaLink. */
   ctaTo?: string;
   image?: string;
   imageAlt?: string;

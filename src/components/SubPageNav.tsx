@@ -16,7 +16,7 @@ const defaultLinks = [
   { label: "Industries", to: "/#industries" },
 ];
 
-/** Nav shared by the Scan & Pay and Loyalty pages — always links home. */
+/** Nav shared by the Scan & Pay and Loyalty pages. Always links home. */
 const SubPageNav = ({
   announcement,
   navLinks = defaultLinks,

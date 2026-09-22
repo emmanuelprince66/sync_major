@@ -26,15 +26,15 @@ const Home = () => (
     <Benefits />
     <Industries />
     <CaseStudy
-      heading="Sync360 helps Trufoods Supermarket cut checkout time by 60%."
+      heading="Sync360 helps Bankem Supermarket cut checkout time by 60%."
       columns={[
         {
           label: "Problem",
-          body: "Long checkout queues during peak hours were costing Trufoods walk-in sales, especially on weekends.",
+          body: "Long checkout queues during peak hours were costing Bankem walk-in sales, especially on weekends.",
         },
         {
           label: "Solution",
-          body: "Trufoods rolled out Sync360's POS with mobile checkout and synced inventory across all three branches.",
+          body: "Bankem rolled out Sync360's POS with mobile checkout and synced inventory across all three branches.",
         },
         {
           label: "Results",
@@ -43,14 +43,13 @@ const Home = () => (
       ]}
       quote={{
         text: "Sync360 changed how our stores move. Our staff spend less time at the till and more time helping customers.",
-        attribution: "Store Operations Lead, Trufoods Supermarket",
+        attribution: "Store Operations Lead, Bankem Supermarket",
       }}
       stats={[
         { value: "60%", label: "Faster checkout" },
         { value: "0", label: "Price mismatches" },
         { value: "3", label: "Branches synced" },
       ]}
-      note="Illustrative example — swap in a real customer story here."
     />
     <AccordionContent />
     <ReachUs />

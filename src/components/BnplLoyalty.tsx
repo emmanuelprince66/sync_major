@@ -14,12 +14,12 @@ const BnplLoyalty = () => {
                 ⏱
               </div>
               <h3 className="mb-3 text-xl font-extrabold md:text-[23px]">
-                Buy now, pay later — in-store or online.
+                Buy now, pay later in-store or online.
               </h3>
               <p className="mb-5 text-grey-600">
-                Offer flexible payment plans to customers without taking on
-                the risk yourself. Sync360 pays you the full amount instantly
-                — you never lose a sale waiting to get paid.
+                Offer flexible payment plans to customers without taking on the
+                risk yourself. Sync360 pays you the full amount instantly you
+                never lose a sale waiting to get paid.
               </p>
 
               <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[18px]">
@@ -38,7 +38,7 @@ const BnplLoyalty = () => {
                 />
               </div>
 
-              {/* Checkout mockup — dark panel, matching .checkout-mock in the design */}
+              {/* Checkout mockup: dark panel, matching .checkout-mock in the design */}
               <div className="rounded-[18px] border border-white/5 bg-[#0B0F0D] p-6 shadow-[0_20px_44px_rgba(0,0,0,0.35)]">
                 <div className="mb-4.5 flex items-baseline justify-between border-b border-white/10 pb-4">
                   <b className="text-[26px] font-black tracking-tight text-white">
@@ -58,7 +58,7 @@ const BnplLoyalty = () => {
                 </div>
                 <div className="flex items-center gap-3 rounded-xl border border-secondary bg-secondary/10 px-3.5 py-3 text-[13px] font-bold text-white">
                   <span className="h-4 w-4 shrink-0 rounded-full border-2 border-secondary bg-secondary shadow-[inset_0_0_0_3px_#0B0F0D]" />
-                  ⏱ Pay in 3 — Buy Now, Pay Later
+                  ⏱ Buy Now, Pay Later
                 </div>
                 <div className="mt-3.5 rounded-xl bg-secondary py-3.5 text-center text-sm font-extrabold text-white">
                   Confirm ₦28,000 Today
@@ -88,9 +88,9 @@ const BnplLoyalty = () => {
                 Loyalty that keeps customers coming back.
               </h3>
               <p className="mb-5 text-grey-600">
-                Digital loyalty points — no card, no app, no device. Customers
-                earn on every purchase and redeem with just their phone
-                number at checkout.
+                Digital loyalty points no card, no app, no device. Customers
+                earn on every purchase and redeem with just their phone number
+                at checkout.
               </p>
 
               <div className="relative mb-3.5 aspect-[16/10] overflow-hidden rounded-[18px]">
@@ -113,7 +113,9 @@ const BnplLoyalty = () => {
                       <i
                         key={i}
                         className={`rounded-[1px] ${
-                          (i * 7 + Math.floor(i / 7)) % 3 === 0 ? "bg-transparent" : "bg-primary"
+                          (i * 7 + Math.floor(i / 7)) % 3 === 0
+                            ? "bg-transparent"
+                            : "bg-primary"
                         }`}
                       />
                     ))}

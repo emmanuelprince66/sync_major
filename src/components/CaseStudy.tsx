@@ -56,7 +56,7 @@ const CaseStudy = ({
             <div className="relative rounded-2xl border border-white/15 bg-white/[0.06] px-7 py-6">
               <p className="mb-2.5 text-base italic text-white/90">"{quote.text}"</p>
               <span className="text-[13px] font-extrabold text-white/60">
-                — {quote.attribution}
+                {quote.attribution}
               </span>
             </div>
           )}

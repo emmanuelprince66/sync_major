@@ -15,19 +15,22 @@ const cards: BentoCard[] = [
     title: "Real logistics partners",
     body: "Ship orders through trusted delivery partners like ShipBubble and Shride, with rates compared automatically so deliveries never hold your business back.",
     className: "sm:col-span-2 lg:col-span-2 lg:row-span-2",
-    style: { background: "linear-gradient(135deg, rgba(30,94,255,.88), rgba(13,63,192,.92))" },
+    style: {
+      background:
+        "linear-gradient(135deg, rgba(30,94,255,.88), rgba(13,63,192,.92))",
+    },
   },
   {
     icon: "⏱",
     title: "Buy now, pay later",
-    body: "Let customers split payment in-store or online — you get paid instantly, in full. Never lose a sale to \"let me pay you later.\"",
+    body: 'Let customers split payment in-store or online  you get paid instantly, in full. Never lose a sale to "let me pay you later."',
     className: "lg:col-span-1",
     style: { background: "linear-gradient(135deg,#C99A2E,#9C7315)" },
   },
   {
     icon: "★",
     title: "Digital loyalty",
-    body: "No card, no device — customers earn and redeem points with just their phone number.",
+    body: "No card, no device  customers earn and redeem points with just their phone number.",
     className: "lg:col-span-1",
     style: { background: "linear-gradient(135deg,#52B661,#2E7D3F)" },
   },
@@ -61,7 +64,7 @@ const Capabilities = () => {
           </h2>
           <p className="mt-3 text-grey-600">
             The parts of running a business that usually need five different
-            tools — Sync360 handles them together.
+            tools. Sync360 handles them together.
           </p>
         </Reveal>
 

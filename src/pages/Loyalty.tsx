@@ -223,7 +223,7 @@ const Loyalty = () => {
             </h1>
             <p className="mb-7 max-w-md text-[17px] text-grey-600">
               Sync360 Loyalty makes it effortless for customers to earn rewards,
-              and effortless for you to bring them back more often — no app for
+              and effortless for you to bring them back more often. No app for
               them to download, no extra system for you to run.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -271,7 +271,7 @@ const Loyalty = () => {
               </h2>
               <p className="text-grey-600">
                 Every visit fills in another day. Customers can see exactly how
-                close they are to their reward — and that visible progress is
+                close they are to their reward, and that visible progress is
                 what brings them back the next time, and the time after.
               </p>
             </div>
@@ -299,7 +299,7 @@ const Loyalty = () => {
               <p className="mb-4 text-grey-600">
                 They scan your QR code once, get their own code back, and show
                 it at the counter every visit after. You scan, the stamp is
-                added — done in seconds.
+                added. Done in seconds.
               </p>
               <ul className="space-y-3">
                 {[
@@ -368,7 +368,7 @@ const Loyalty = () => {
               Loyalty isn't just nice for customers. It's growth for you.
             </h2>
             <p className="mt-3 text-grey-600">
-              Every streak a customer builds is a reason to come back — and
+              Every streak a customer builds is a reason to come back, and
               repeat customers spend more, more often.
             </p>
           </Reveal>
@@ -400,7 +400,7 @@ const Loyalty = () => {
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl">Who is it for?</h2>
             <p className="mt-3 text-grey-600">
-              For anywhere that depends on returning customers — any business
+              For anywhere that depends on returning customers: any business
               that wants to run a "buy X, get Y" campaign.
             </p>
           </Reveal>
@@ -443,7 +443,7 @@ const Loyalty = () => {
           {
             question: "Is the stamp card app free?",
             answer:
-              "Yes — you can start for free, with enough monthly stamps for most small businesses. You can upgrade any time for unlimited stamps.",
+              "Yes, you can start for free, with enough monthly stamps for most small businesses. You can upgrade any time for unlimited stamps.",
           },
           {
             question: "Do customers have to download an app?",
@@ -453,12 +453,12 @@ const Loyalty = () => {
           {
             question: "Can I add staff or new devices?",
             answer:
-              "Yes — add as many staff phones or devices as you need. Every stamp is logged in your admin dashboard.",
+              "Yes, add as many staff phones or devices as you need. Every stamp is logged in your admin dashboard.",
           },
           {
             question: "Is Sync360 Loyalty secure?",
             answer:
-              "Yes — customer and transaction data is protected to high security standards, on the same infrastructure that runs the rest of Sync360.",
+              "Yes, customer and transaction data is protected to high security standards, on the same infrastructure that runs the rest of Sync360.",
           },
         ]}
       />

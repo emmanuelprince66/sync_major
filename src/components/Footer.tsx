@@ -2,7 +2,7 @@ import { FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail, MdSecurity } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logoOne from "../assets/logoOne.png";
+import sync360Dark from "../assets/sync360Dark.png";
 
 interface FooterLink {
   label: string;
@@ -41,22 +41,34 @@ const footerCols: { heading: string; links: FooterLink[] }[] = [
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-grey-900 px-6 py-12 text-sm text-white/50 md:px-12">
+    <footer
+      id="contact"
+      className="bg-grey-900 px-6 py-12 text-sm text-white/50 md:px-12"
+    >
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-9 flex flex-col items-center gap-8 border-b border-white/10 pb-9 md:flex-row md:items-start md:justify-between">
           <Link to="/">
-            <img src={logoOne} alt="Sync360" className="h-14 w-auto md:h-16" />
+            <img
+              src={sync360Dark}
+              alt="Sync360"
+              className="h-14 w-auto md:h-16"
+            />
           </Link>
 
           <div className="flex flex-wrap justify-center gap-10 text-center md:justify-end md:text-left">
             {footerCols.map((col) => (
               <div key={col.heading}>
-                <h5 className="mb-3.5 text-sm font-bold text-white">{col.heading}</h5>
+                <h5 className="mb-3.5 text-sm font-bold text-white">
+                  {col.heading}
+                </h5>
                 <ul className="space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
                       {link.to ? (
-                        <Link to={link.to} className="transition-colors hover:text-white">
+                        <Link
+                          to={link.to}
+                          className="transition-colors hover:text-white"
+                        >
                           {link.label}
                         </Link>
                       ) : (
@@ -118,7 +130,9 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center gap-4 border-t border-white/10 pt-6 text-xs md:flex-row md:justify-between">
-          <span>© {new Date().getFullYear()} Sync360. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} Sync360. All rights reserved.
+          </span>
 
           <div className="flex items-center gap-2">
             <MdEmail size={16} />

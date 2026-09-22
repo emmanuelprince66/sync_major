@@ -26,9 +26,9 @@ const CustomerExpenses = () => {
                 Reach every customer, automatically.
               </h3>
               <p className="mb-5 text-grey-600">
-                Build customer profiles from every sale, then reach out with
-                SMS and email — restock alerts, promos, and thank-you
-                messages that bring people back.
+                Build customer profiles from every sale, then reach out with SMS
+                and email restock alerts, promos, and thank-you messages that
+                bring people back.
               </p>
 
               <div className="relative mb-4">
@@ -57,7 +57,6 @@ const CustomerExpenses = () => {
                   ✉ Email opened
                 </div>
               </div>
-
             </div>
           </Reveal>
 
@@ -72,8 +71,8 @@ const CustomerExpenses = () => {
               </h3>
               <p className="mb-5 text-grey-600">
                 Create controlled expense accounts for your team with set
-                limits, so business spending stays visible and approved —
-                never a surprise.
+                limits, so business spending stays visible and approved never a
+                surprise.
               </p>
 
               <div className="relative aspect-[16/10] overflow-hidden rounded-[18px]">

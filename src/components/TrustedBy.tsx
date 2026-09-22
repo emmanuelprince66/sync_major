@@ -1,14 +1,14 @@
-import aetos from "../assets/trusted/WhatsApp Image 2026-08-07 at 8.38.55 PM.jpeg";
-import safeHaven from "../assets/trusted/WhatsApp Image 2026-08-07 at 8.38.58 PM.jpeg";
-import velvpay from "../assets/trusted/WhatsApp Image 2026-08-07 at 8.38.59 PM.jpeg";
-import akawopay from "../assets/trusted/WhatsApp Image 2026-08-08 at 11.35.28 AM.jpeg";
-import chowdeck from "../assets/trusted/Chowdeck_240x120.png";
-import fedex from "../assets/trusted/FedEx_240x120.png";
+import chowdeck from "../assets/trusted/chowdeck.jpg";
 import fez from "../assets/trusted/Fed_240x120.png";
-import gigLogistics from "../assets/trusted/GIG_Logistics_240x120.png";
+import fedex from "../assets/trusted/FedEx_240x120.png";
+import gigLogistics from "../assets/trusted/gig.png";
 import honeydew from "../assets/trusted/Honeydew_240x120.png";
+import safeHaven from "../assets/trusted/safehave.png";
 import shipbubble from "../assets/trusted/Shipbubble_240x120.png";
-import shride from "../assets/trusted/Shride_240x120.png";
+import velvpay from "../assets/trusted/velve.jfif";
+import aetos from "../assets/trusted/WhatsApp Image 2026-08-07 at 8.38.55 PM.jpeg";
+import akawopay from "../assets/trusted/WhatsApp Image 2026-08-08 at 11.35.28 AM.jpeg";
+// import shride from "../assets/trusted/Shride_240x120.png";
 import spicy from "../assets/trusted/Spicy_240x120.png";
 import vfd from "../assets/trusted/VFD_logo_standardized_240x120.png";
 import Reveal from "./Reveal";
@@ -19,7 +19,7 @@ const brands = [
   { logo: fedex, name: "FedEx" },
   { logo: fez, name: "Fez Delivery" },
   { logo: shipbubble, name: "Shipbubble" },
-  { logo: shride, name: "Shride" },
+  // { logo: shride, name: "Shride" },
   { logo: vfd, name: "VFD Microfinance Bank" },
   { logo: safeHaven, name: "Safe Haven MFB" },
   { logo: velvpay, name: "Velvpay" },
@@ -46,7 +46,9 @@ const BrandCard = ({ logo, name }: { logo: string; name: string }) => (
         className="max-h-14 w-auto max-w-[130px] object-contain"
       />
     </div>
-    <span className="text-center text-[13px] font-bold text-grey-600">{name}</span>
+    <span className="text-center text-[13px] font-bold text-grey-600">
+      {name}
+    </span>
   </div>
 );
 
@@ -95,9 +97,13 @@ const TrustedBy = ({
             {eyebrow}
           </p>
         )}
-        <h3 className="text-xl font-black text-grey-900 md:text-2xl">{heading}</h3>
+        <h3 className="text-xl font-black text-grey-900 md:text-2xl">
+          {heading}
+        </h3>
         {subheading && (
-          <p className="mt-2 text-sm text-grey-600 md:text-[14.5px]">{subheading}</p>
+          <p className="mt-2 text-sm text-grey-600 md:text-[14.5px]">
+            {subheading}
+          </p>
         )}
       </Reveal>
     </div>
