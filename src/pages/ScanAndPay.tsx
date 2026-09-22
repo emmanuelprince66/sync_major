@@ -151,7 +151,7 @@ const StoreBadges = () => (
   <div className="flex flex-wrap justify-center gap-3.5">
     {/* Google Play */}
     <a
-      href={links.signup}
+      href={links.playStore}
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(13,38,28,0.12)] transition-transform hover:-translate-y-0.5"
@@ -183,7 +183,7 @@ const StoreBadges = () => (
 
     {/* App Store */}
     <a
-      href={links.signup}
+      href={links.appStore}
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white py-3 pl-4 pr-5 shadow-[0_8px_20px_rgba(13,38,28,0.12)] transition-transform hover:-translate-y-0.5"

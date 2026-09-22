@@ -41,4 +41,6 @@ export const links = {
   signup: "https://business.sync360.africa/signup",
   login: "https://business.sync360.africa",
   whatsapp: "https://wa.me/message/BEC7OOFPUWZZK1",
+  appStore: "https://apps.apple.com/app/sync360/id6742539825",
+  playStore: "https://play.google.com/store/apps/details?id=com.sync.sink",
 } as const;

@@ -1,6 +1,7 @@
 import apple from "../assets/Apple.png";
 import phone from "../assets/phone.png";
 import play from "../assets/playstore.png";
+import { links } from "../lib/designImages";
 import Reveal from "./Reveal";
 
 const ReachUs = () => {
@@ -65,7 +66,7 @@ const ReachUs = () => {
                   type="button"
                   onClick={() =>
                     window.open(
-                      "https://play.google.com/store/apps/details?id=com.sync.sink",
+                      links.playStore,
                       "_blank",
                       "noopener,noreferrer",
                     )
@@ -90,7 +91,7 @@ const ReachUs = () => {
                   type="button"
                   onClick={() =>
                     window.open(
-                      "https://apps.apple.com/us/app/Sync360/id6514304272",
+                      links.appStore,
                       "_blank",
                       "noopener,noreferrer",
                     )
