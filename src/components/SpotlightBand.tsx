@@ -16,6 +16,8 @@ interface SpotlightBandProps {
   /** Replaces the default single-image panel entirely (e.g. with a slider). */
   media?: ReactNode;
   badges?: string[];
+  /** Custom content rendered under the body copy, in place of badges. */
+  afterBody?: ReactNode;
   overlay?: ReactNode;
   variant?: "primary" | "primary-soft";
   sectionBg?: string;
@@ -32,6 +34,7 @@ const SpotlightBand = ({
   imageAlt = "",
   media,
   badges,
+  afterBody,
   overlay,
   variant = "primary",
   sectionBg = "bg-cream",
@@ -57,13 +60,16 @@ const SpotlightBand = ({
               }}
             />
             <div className="relative grid grid-cols-1 items-center gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
-              <div>
+              {/* min-w-0 stops wide content (e.g. a marquee) from stretching this column and pushing the image out */}
+              <div className="min-w-0">
                 <span className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide text-secondary">
                   <span className="h-1.5 w-1.5 rounded-full bg-current" />
                   {eyebrow}
                 </span>
                 <h2 className="mt-3 text-3xl text-white md:text-4xl">{heading}</h2>
                 <p className="mt-4 mb-6 text-white/70">{body}</p>
+
+                {afterBody && <div className="mb-7">{afterBody}</div>}
 
                 {badges && badges.length > 0 && (
                   <div className="mb-7 flex flex-wrap gap-2.5">

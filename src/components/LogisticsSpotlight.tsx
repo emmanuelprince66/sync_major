@@ -59,21 +59,13 @@ const PartnerLogo = ({ name, logo }: Partner) => (
   </span>
 );
 
+// Logos travel left to right and disappear into the "48+" block on the right.
 const PartnerMarquee = () => (
-  <div className="absolute inset-x-4 top-4 flex items-center gap-3 rounded-2xl bg-white/90 py-2.5 pl-4 pr-3 shadow-[0_16px_34px_rgba(13,38,28,0.18)] backdrop-blur">
-    <div className="shrink-0 leading-tight">
-      <b className="block text-base font-black text-grey-900">
-        {PARTNER_COUNT_LABEL}
-      </b>
-      <span className="text-[11px] font-semibold text-grey-600">
-        delivery partners
-      </span>
-    </div>
-
-    {/* Edge fade so logos appear to emerge and dissolve instead of being clipped */}
-    <div className="relative min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]">
-      {/* Two identical groups, translated by -50%, give a seamless loop */}
-      <div className="flex w-max animate-marquee gap-2.5 motion-reduce:animate-none">
+  <div className="flex items-center gap-3 rounded-2xl border border-secondary/30 bg-secondary/15 py-2.5 pl-3 pr-4 backdrop-blur-sm">
+    {/* Fade on the left so logos emerge; fade on the right so they sink into the count */}
+    <div className="relative min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_80%,transparent)]">
+      {/* Two identical groups; the reversed -50% loop moves them rightwards seamlessly */}
+      <div className="flex w-max animate-marquee-reverse gap-2.5 motion-reduce:animate-none">
         {[0, 1].map((copy) => (
           <div
             key={copy}
@@ -87,6 +79,15 @@ const PartnerMarquee = () => (
         ))}
       </div>
     </div>
+
+    <div className="shrink-0 border-l border-secondary/30 pl-3 text-right leading-tight">
+      <b className="block text-base font-black text-white">
+        {PARTNER_COUNT_LABEL}
+      </b>
+      <span className="text-[11px] font-semibold text-white/70">
+        delivery partners
+      </span>
+    </div>
   </div>
 );
 
@@ -96,7 +97,7 @@ const LogisticsSpotlight = () => {
       eyebrow="Delivery, sorted"
       heading="Real delivery partners. Compare rates in one click."
       body="Sync360 connects your orders to trusted logistics partners like ShipBubble, GIG Logistics and Chowdeck, so you can compare rates automatically, book a pickup in a click, and give customers real-time tracking from checkout to doorstep."
-      badges={["ShipBubble", `${PARTNER_COUNT_LABEL} delivery partners`]}
+      afterBody={<PartnerMarquee />}
       ctaText={`See ${PARTNER_COUNT_LABEL} Delivery Partners`}
       ctaLink={links.signup}
       image={img.delivery}
@@ -104,7 +105,6 @@ const LogisticsSpotlight = () => {
       variant="primary"
       overlay={
         <>
-          <PartnerMarquee />
           {pingPositions.map((p, i) => (
             <span
               key={i}

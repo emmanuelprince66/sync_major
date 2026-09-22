@@ -66,13 +66,9 @@ const BnplLoyalty = () => {
               </div>
 
               <div className="mt-2 rounded-2xl bg-white p-5 shadow-[0_10px_26px_rgba(0,0,0,0.08)]">
-                <div className="flex justify-between border-b border-dashed border-grey-300 py-2 text-[13.5px] font-bold">
+                <div className="flex justify-between py-2 text-[13.5px] font-bold">
                   <span>Paid to you today</span>
                   <span className="text-success">₦84,000 ✓</span>
-                </div>
-                <div className="flex justify-between py-2 text-[13.5px] font-bold">
-                  <span>Customer pays over</span>
-                  <span>3 instalments</span>
                 </div>
               </div>
             </div>

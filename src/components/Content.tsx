@@ -12,7 +12,7 @@ interface ContentItem {
   buttonText?: string;
   buttonLink?: string;
   buttonDisabled?: boolean;
-  /** Renders the image contained on a dark panel (for app screenshots). */
+  /** Renders the whole image uncropped, with no panel behind it (for app screenshots). */
   contain?: boolean;
 }
 
@@ -86,8 +86,6 @@ const contentItems: ContentItem[] = [
     ],
     badge: "Reports",
     badgeClass: "bg-error-light text-error",
-    buttonText: "Coming Soon",
-    buttonDisabled: true,
     contain: true,
   },
 ];
@@ -162,7 +160,7 @@ const Content = () => {
                   </h3>
                   <p className="mb-6 text-grey-600">{item.description}</p>
 
-                  {item.buttonDisabled ? (
+                  {!item.buttonText ? null : item.buttonDisabled ? (
                     <button
                       disabled
                       className="cursor-not-allowed rounded-full bg-grey-300 px-8 py-3.5 font-extrabold text-grey-600"
@@ -184,12 +182,12 @@ const Content = () => {
 
                 <div className="w-full lg:w-1/2">
                   {item.contain ? (
-                    <div className="flex aspect-[4/3.1] items-center justify-center overflow-hidden rounded-[22px] bg-primary">
+                    <div className="flex aspect-[4/3.1] items-center justify-center">
                       <img
                         src={item.slides[0].src}
                         alt={item.slides[0].alt}
                         loading="lazy"
-                        className="h-full w-auto object-contain"
+                        className="h-full w-auto rounded-[22px] object-contain"
                       />
                     </div>
                   ) : (

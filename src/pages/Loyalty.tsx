@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import phone from "../assets/phone.png";
 import syn from "../assets/sync.svg";
+import sync360Dark from "../assets/sync360Dark.png";
 import { AccordionContent } from "../components/AccordionContent";
 import Reveal from "../components/Reveal";
 import { img, links } from "../lib/designImages";
@@ -467,34 +469,47 @@ const Loyalty = () => {
       <section className="pb-16 md:pb-20">
         <div className="mx-auto max-w-[1200px] px-6 md:px-12">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[28px] bg-secondary px-6 py-14 text-center md:px-12">
+            <div className="relative overflow-hidden rounded-[28px] bg-secondary px-6 pt-14 md:px-12">
               <div className="grid-pattern" />
-              <h2 className="relative mb-3 text-3xl text-white md:text-4xl">
-                Try it for free.
-              </h2>
-              <p className="relative mx-auto mb-7 max-w-md text-white/85">
-                Create your loyalty card and start growing repeat sales right
-                away.
-              </p>
-              <div className="relative flex flex-col justify-center gap-4 sm:flex-row">
-                <button
-                  type="button"
-                  onClick={() =>
-                    window.open(links.signup, "_blank", "noopener,noreferrer")
-                  }
-                  className="cursor-pointer rounded-full bg-white px-8 py-3.5 font-extrabold text-secondary-dark shadow-[0_10px_24px_rgba(0,0,0,0.15)] transition-transform hover:-translate-y-1"
-                >
-                  Try for Free
-                </button>
-                <button
-                  type="button"
-                  onClick={() =>
-                    window.open(links.whatsapp, "_blank", "noopener,noreferrer")
-                  }
-                  className="cursor-pointer rounded-full border-[1.5px] border-white/50 bg-white/10 px-8 py-3.5 font-extrabold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20"
-                >
-                  Talk to Us
-                </button>
+              <div className="relative grid grid-cols-1 gap-10 md:grid-cols-[1.1fr_0.9fr]">
+                <div className="text-center md:self-center md:pb-14 md:text-left">
+                  <h2 className="mb-3 text-3xl text-white md:text-4xl">
+                    Try it for free.
+                  </h2>
+                  <p className="mx-auto mb-7 max-w-md text-white/85 md:mx-0">
+                    Create your loyalty card and start growing repeat sales
+                    right away.
+                  </p>
+                  <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        window.open(links.signup, "_blank", "noopener,noreferrer")
+                      }
+                      className="cursor-pointer rounded-full bg-white px-8 py-3.5 font-extrabold text-secondary-dark shadow-[0_10px_24px_rgba(0,0,0,0.15)] transition-transform hover:-translate-y-1"
+                    >
+                      Try for Free
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        window.open(links.whatsapp, "_blank", "noopener,noreferrer")
+                      }
+                      className="cursor-pointer rounded-full border-[1.5px] border-white/50 bg-white/10 px-8 py-3.5 font-extrabold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20"
+                    >
+                      Talk to Us
+                    </button>
+                  </div>
+                </div>
+                {/* Same phone as the home page CTA, flush on the card's bottom edge. */}
+                <div className="mx-auto flex max-w-[230px] justify-center self-end">
+                  <img
+                    src={phone}
+                    alt="Sync360 app showing today's sales, expenses and customers"
+                    loading="lazy"
+                    className="block w-full max-w-[230px] object-contain"
+                  />
+                </div>
               </div>
             </div>
           </Reveal>
@@ -506,7 +521,7 @@ const Loyalty = () => {
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-8 flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-between">
             <Link to="/" className="flex items-center gap-2.5">
-              <img src={syn} alt="Sync360" className="h-14 w-auto md:h-16" />
+              <img src={sync360Dark} alt="Sync360" className="h-14 w-auto md:h-16" />
               <span className="text-lg font-black text-white">Loyalty</span>
             </Link>
             <div className="flex flex-wrap justify-center gap-12 text-center md:text-left">
