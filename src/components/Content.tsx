@@ -1,3 +1,4 @@
+import syncPhone from "../assets/sync-phone.jpeg";
 import { img, links } from "../lib/designImages";
 import ImageSlider from "./ImageSlider";
 import type { Slide } from "./ImageSlider";
@@ -50,8 +51,8 @@ const contentItems: ContentItem[] = [
         alt: "Customer checking out online with a phone and card",
       },
       {
-        src: img.onlineBrowsing,
-        alt: "Customer browsing an online store on their phone",
+        src: syncPhone,
+        alt: "Customer browsing a Sync360 online store on her phone at home",
       },
     ],
     badge: "Online Store",

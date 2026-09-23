@@ -5,6 +5,7 @@ import gigLogistics from "../assets/trusted/gig.png";
 import honeydew from "../assets/trusted/Honeydew_240x120.png";
 import safeHaven from "../assets/trusted/safehave.png";
 import shipbubble from "../assets/trusted/Shipbubble_240x120.png";
+import standforth from "../assets/trusted/Standforth Digital PNG-07.png";
 import velvpay from "../assets/trusted/velve.jfif";
 import aetos from "../assets/trusted/WhatsApp Image 2026-08-07 at 8.38.55 PM.jpeg";
 import akawopay from "../assets/trusted/WhatsApp Image 2026-08-08 at 11.35.28 AM.jpeg";
@@ -27,6 +28,7 @@ const brands = [
   { logo: aetos, name: "Aetos" },
   { logo: honeydew, name: "Honeydew" },
   { logo: spicy, name: "5 Spicy" },
+  { logo: standforth, name: "Standforth Digital" },
 ];
 
 interface TrustedByProps {

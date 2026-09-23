@@ -35,21 +35,20 @@ const ReachUs = () => {
                 Download the Sync360 app to manage inventory, payments, delivery
                 and loyalty right from your pocket.
               </p>
-              <p className="mx-auto mt-3.5 mb-7 max-w-md text-white/65 md:mx-0"></p>
-              <div className="flex flex-wrap justify-center gap-3.5 md:justify-start">
+              <div className="grid grid-cols-1 gap-3.5 sm:flex sm:flex-wrap sm:justify-center md:justify-start">
                 <a
                   href="https://business.sync360.africa"
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative z-10 flex items-center gap-2.5 rounded-xl border border-white bg-white px-4 py-2.5 text-[#073b2a] opacity-100 shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-white"
+                  className="group relative z-10 flex w-full items-center gap-2.5 rounded-xl border border-white/80 bg-white/10 px-4 py-2.5 text-white transition-transform hover:-translate-y-0.5 hover:bg-white/20 sm:w-auto"
                 >
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#073b2a]/10 text-[#073b2a]">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-white">
                     <svg
                       aria-hidden="true"
                       className="h-4 w-4"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke="white"
+                      stroke="currentColor"
                       strokeWidth="2"
                     >
                       <circle cx="12" cy="12" r="9" />
@@ -57,9 +56,12 @@ const ReachUs = () => {
                     </svg>
                   </span>
                   <span className="flex flex-col items-start leading-tight">
-                    <small className="text-[9.5px] font-semibold text-[#ffff]">
-                      VISIT US ONLINE
+                    <small className="text-[9.5px] font-semibold text-white/75">
+                      VISIT US
                     </small>
+                    <strong className="text-sm font-extrabold text-white">
+                      Online
+                    </strong>
                   </span>
                 </a>
                 <button
@@ -71,7 +73,7 @@ const ReachUs = () => {
                       "noopener,noreferrer",
                     )
                   }
-                  className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5"
+                  className="flex w-full cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5 sm:w-auto"
                 >
                   <img
                     src={play}
@@ -96,7 +98,7 @@ const ReachUs = () => {
                       "noopener,noreferrer",
                     )
                   }
-                  className="flex cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5"
+                  className="flex w-full cursor-pointer items-center gap-2.5 rounded-xl border border-[rgba(255,255,255,0.2)] bg-[#000000] px-4 py-2.5 transition-transform hover:-translate-y-0.5 sm:w-auto"
                 >
                   <img
                     src={apple}

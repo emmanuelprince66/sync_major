@@ -59,13 +59,13 @@ const PartnerLogo = ({ name, logo }: Partner) => (
   </span>
 );
 
-// Logos travel left to right and disappear into the "48+" block on the right.
+// Logos emerge from the "48+" block on the right and travel leftwards.
 const PartnerMarquee = () => (
   <div className="flex items-center gap-3 rounded-2xl border border-secondary/30 bg-secondary/15 py-2.5 pl-3 pr-4 backdrop-blur-sm">
-    {/* Fade on the left so logos emerge; fade on the right so they sink into the count */}
-    <div className="relative min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_80%,transparent)]">
-      {/* Two identical groups; the reversed -50% loop moves them rightwards seamlessly */}
-      <div className="flex w-max animate-marquee-reverse gap-2.5 motion-reduce:animate-none">
+    {/* Fade on the left so logos dissolve as they leave; no fade on the right, so they look like they come out of the count */}
+    <div className="relative min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_15%,#000_100%)]">
+      {/* Two identical groups translated by -50% give a seamless leftward loop */}
+      <div className="flex w-max animate-marquee gap-2.5 motion-reduce:animate-none">
         {[0, 1].map((copy) => (
           <div
             key={copy}
