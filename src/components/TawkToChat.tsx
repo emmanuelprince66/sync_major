@@ -22,6 +22,14 @@ export default function TawkToChat() {
       return;
     }
 
+    // Tawk fires onLoad as soon as it is ready, which can be before our own
+    // script.onload runs. Registering the handler first makes sure its default
+    // widget is always hidden, so it never sits on top of the button below.
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_API.onLoad = function () {
+      window.Tawk_API?.hideWidget?.();
+    };
+
     // Load Tawk.to script
     const script = document.createElement("script");
     script.async = true;
@@ -31,12 +39,8 @@ export default function TawkToChat() {
 
     script.onload = () => {
       setIsLoaded(true);
-      // Hide the default Tawk.to widget
-      if (window.Tawk_API) {
-        window.Tawk_API.onLoad = function () {
-          window.Tawk_API.hideWidget();
-        };
-      }
+      // Covers the case where Tawk had already loaded and fired onLoad.
+      window.Tawk_API?.hideWidget?.();
     };
 
     document.body.appendChild(script);

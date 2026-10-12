@@ -586,14 +586,20 @@ const Loyalty = () => {
                 <h5 className="mb-3 text-sm font-bold text-white">Policies</h5>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="transition-colors hover:text-white">
+                    <Link
+                      to="/privacy"
+                      className="transition-colors hover:text-white"
+                    >
                       Privacy Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="transition-colors hover:text-white">
+                    <Link
+                      to="/terms"
+                      className="transition-colors hover:text-white"
+                    >
                       Terms &amp; Conditions
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
